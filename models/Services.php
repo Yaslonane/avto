@@ -11,37 +11,49 @@
  *
  * @author andrey
  */
-class Catriges {
+class Services {
     //put your code here
     
-    public static function getSumAllCarteiges(){ //получаем сумму всех картриджей(доставленных и замененных) по запросу ниже
+    public static function getAllServices(){ //получаем сумму всех картриджей(доставленных и замененных) по запросу ниже
         
-        /*SELECT c.name as Имя, sum(aC.value) as Сумма FROM actionsCartriges aC
-        INNER JOIN cartriges c ON aC.id_cartriges = c.id
-        GROUP BY c.name;*/
+        $db = Db::getConnection(); //инициализируем подключение к бд
         
-        $sql = "SELECT c.name as name, sum(aC.value) as value FROM actionsCartriges aC
-                INNER JOIN cartriges c ON aC.id_cartriges = c.id
-                GROUP BY c.name;";
+        $servicesList = array(); //инициализируем переменную 
         
-        return arr();
+        $result = $db->query('SELECT * FROM services'); // получаем из базы список
+        
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $i = 0;
+        while($row = $result->fetch()){
+            foreach($row as $key => $value) { //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                $servicesList[$i][$key] = $value;
+            }
+            $i++;
+        }
+        return $servicesList; //возвращаем массив
     }
     
-    public static function addCartriges(){ //добавление действия с картриджеми
+    public static function getLimitServices($limit = 3){ //получаем сумму всех картриджей(доставленных и замененных) по запросу ниже
         
+        $db = Db::getConnection(); //инициализируем подключение к бд
         
+        $servicesList = array(); //инициализируем переменную 
+        
+        $sql = "SELECT * FROM services ORDER BY RAND() LIMIT ". intval($limit) . "";
+        
+        $result = $db->query($sql); // получаем из базы список
+        
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $i = 0;
+        while($row = $result->fetch()){
+            foreach($row as $key => $value) { //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                $servicesList[$i][$key] = $value;
+            }
+            $i++;
+        }
+        return $servicesList; //возвращаем массив
     }
-    
-    //public static function RemoveCartriges()
-    
-    public static function AddNewCartriges(){ // добавление нового картриджа
-        
-        
-    }
-    
-    public static function ReactivCartriges(){ // изменение статуза задействования принтера
-        
-        
-    } 
     
 }

@@ -23,6 +23,11 @@ class SiteController{
         
         /*$latestProduct = array();
         $latestProduct = Product::getLatestProducts();*/
+        //var_dump(Services::getLimitServices(6));
+        
+        $inf = info::getInfo();
+        
+        $serv = Services::getLimitServices(6);
         
         require_once(ROOT . TMPL .'index.php');
         

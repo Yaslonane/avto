@@ -46,9 +46,7 @@
     					<h3><i class="fa fa-fw fa-clock-o"></i> График работы</h3>
     				</div>
     				<div class="content-box">
-    					<p>Понедельник &dash; Пятница : 08.00 &dash; 21.00</p>
-    					<p>Суббота : 08.00 &dash; 15.00</p>
-    					<p>Воскресенье : Закрыто</p>
+    					<?php echo $inf['work_time'];?>
     				</div><!-- end content-box -->
     			</div><!-- end row-box -->
 
@@ -58,7 +56,7 @@
     				</div>
 
     				<div class="content-box">
-    					<p>Курск, ул. 50 лет Октября 124Д<br/>на территории СТО Форт,<br/>напротив ГИБДД</p>
+    					<?php echo $inf['adress'];?>
     					<a href="#" class="btn btn-sm btn-white">Посмотреть на карте</a>
     				</div><!-- end content-box -->
     			</div><!-- end row-box -->
@@ -68,8 +66,7 @@
     					<h3><i class="fa fa-fw fa-phone"></i> Телефон для связи </h3>
     				</div>
     				<div class="content-box">
-    					<p class="tlg">8-910-316-38-88</p>
-    					<p class="tlg">8-920-737-38-88</p>
+    					<?php echo $inf['phones'];?>
     				</div><!-- end content-box -->
     			</div><!-- end row-box -->
 
@@ -84,7 +81,20 @@
                     <div class="centered-title">
                         <h3>Наши услуги</h3>
                     </div>
-                    
+                    <?php foreach($serv as $srv): ?>
+                        <div class="service-col">
+                            <h3><?php echo $srv['name'];?></h3>
+                            <p><?php echo $srv['text_mini'];?> <a href="services/<?php echo $srv['id'];?>" class="more">Подробнее</a></p>
+                            <figure>
+                                <?php if(!$srv['img']):?>
+                                    <img src="images/content/sm-service-01.jpg" alt="">
+                                <?php else:?>
+                                    <img src="<?php echo $srv['img'];?>" alt="">
+                                <?php endif;?>
+                            </figure>
+                        </div>
+                    <?php endforeach; ?>
+                    <!--
                     <div class="service-col">
                         <h3>Body Repair &amp; Paint</h3>
                         <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. <a href="services.html" class="more">View Details</a></p>
@@ -132,7 +142,7 @@
                             <img src="images/content/sm-service-01.jpg" alt="">
                         </figure>
                     </div>
-
+-->
                 </div><!-- end row -->
             </div><!-- end container -->
         </div><!-- end service-section -->
