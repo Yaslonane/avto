@@ -8,7 +8,6 @@
 
 return array(
     
-    '' => 'site/index',    
     'about' => 'site/about',
     'services/([0-9]+)' => 'services/view/$1',
     'services' => 'services/index',
@@ -23,10 +22,10 @@ return array(
     'cabinet' => 'cabinet/index',
     
     'administration' => 'admin/index',
-    
-    
-    /*'printers' => 'printers/index',
-    'printers/([0-9]+)' => 'printers/view/$1',
+        
+    '' => 'site/index',
+
+    /*'printers/([0-9]+)' => 'printers/view/$1',
     'printers/edit/([0-9]+)' => 'printers/edit/$1',
     'cartriges' => 'cartriges/index',
     

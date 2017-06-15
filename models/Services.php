@@ -61,7 +61,7 @@ class Services {
             $row = $result->fetch();
             
             foreach($row as $key => $value) { 
-                    $post[$key] = $value;
+                    $service[$key] = $value;
                 }
             
             return $service;

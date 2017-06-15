@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title><?php echo self::$title; ?></title>
 
     <!-- Bootstrap -->
     <link href="<?php echo TMPL; ?>css/styles.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 				        </button>
 
 				        <div class="logo navbar-brand">
-				        	<a href="#"><img src="images/logo.png" height = "60" alt="" title="Bengkel"></a>
+                                            <a href="#"><img src="../images/logo.png" height = "60" alt="" title="Bengkel"></a>
 				        </div><!-- end logo -->
 
 				        <nav id="primary-navigation" class="site-navigation navbar-collapse collapse" role="navigation">
@@ -42,7 +42,7 @@
     							<ul class="menu">
     								<li class="active"><a href="index.html">Домой</a></li>
                                     <li><a href="about.html">О нас</a></li>
-    								<li class="has-child"><a href="services.html">Услуги</a>
+    								<li class="has-child"><a href="services">Услуги</a>
 										<ul class="sub-menu">
 											<li><a href="service-single.html">Услуга 1</a></li>
                                             <li><a href="service-single.html">Услуга 2</a></li>
