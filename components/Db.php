@@ -21,6 +21,7 @@ class Db{
             $db->exec('SET NAMES utf8'); //задаём кодировку ввода/вывода БД
 
         return $db;
+
         } catch (PDOException $e){
             echo "Error connect DB:" . $e->getMessage();
         }
