@@ -1,26 +1,19 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Catriges
+ * Description of Services
  *
  * @author andrey
  */
 class Services {
     //put your code here
     
-    public static function getAllServices(){ //получаем сумму всех картриджей(доставленных и замененных) по запросу ниже
+    public static function getAllServices(){ //получаем все услуги
         
         $db = Db::getConnection(); //инициализируем подключение к бд
         
         $servicesList = array(); //инициализируем переменную 
         
-        $result = $db->query('SELECT * FROM services'); // получаем из базы список
+        $result = $db->query('SELECT * FROM services WHERE is_publication = 1'); // получаем из базы список
         
         $result->setFetchMode(PDO::FETCH_ASSOC);
         
@@ -34,13 +27,13 @@ class Services {
         return $servicesList; //возвращаем массив
     }
     
-    public static function getLimitServices($limit = 3){ //получаем сумму всех картриджей(доставленных и замененных) по запросу ниже
+    public static function getLimitServices($limit = 3){ //получаем случайные услуги
         
         $db = Db::getConnection(); //инициализируем подключение к бд
         
         $servicesList = array(); //инициализируем переменную 
         
-        $sql = "SELECT * FROM services ORDER BY RAND() LIMIT ". intval($limit) . "";
+        $sql = "SELECT * FROM services WHERE is_publication = 1 ORDER BY RAND() LIMIT ". intval($limit) . "";
         
         $result = $db->query($sql); // получаем из базы список
         
@@ -54,6 +47,25 @@ class Services {
             $i++;
         }
         return $servicesList; //возвращаем массив
+    }
+    
+    public static function getServiceById($id){
+        
+        $id = intval($id);
+        
+        if($id){
+            $db = Db::getConnection();
+            
+            $result = $db->query('SELECT * FROM services WHERE id='.$id);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $row = $result->fetch();
+            
+            foreach($row as $key => $value) { 
+                    $post[$key] = $value;
+                }
+            
+            return $service;
+        }
     }
     
 }

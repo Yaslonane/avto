@@ -5,9 +5,12 @@
  */
 
 class SiteController{
+    
+    public static $title = "AVTOZONA";
         /*
          * 
          * вывод главной страницы
+         *
          * 
          */
     public function actionIndex(){ 
@@ -28,6 +31,8 @@ class SiteController{
         $inf = info::getInfo();
         
         $serv = Services::getLimitServices(6);
+        
+        $blg = Blogs::getLatestPosts();
         
         require_once(ROOT . TMPL .'index.php');
         

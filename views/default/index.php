@@ -154,28 +154,35 @@
     				<div class="centered-title">
     					<h3>Latest News</h3>
     				</div><!-- blogs-title -->
+                                
+                                <?php foreach($blg as $bl): ?>
+                                
+                                    <div class="col-md-4">
+                                            <figure class="blog-thumb">
+                                                <?php if(!$bl['img']): ?>
+                                                    <img src="images/content/blog-thumb-01.jpg" alt="">
+                                                <?php else: ?>
+                                                    <img src="<?php echo $bl['img']; ?>" alt="">
+                                                <?php endif; ?>
+                                            </figure>
+                                            <div class="inner">
+                                                    <div class="entry-header">
+                                                                    <time class="published" datetime="2014-12-13" title="December 13, 2014 - 21:12 pm"><?php echo $bl['date']; ?></time>
+                                                                    <h2 class="post-title entry-title">
+                                                                            <a href="blog/<?php echo $bl['id']; ?>"><?php echo $bl['name']; ?></a>
+                                                                    </h2>
+                                                            </div><!-- end entry-header -->
+                                                            <div class="entry-content">
+                                                                    <p><?php echo $bl['text_mini']; ?></p>
+                                                                    <p>
+                                                                            <a href="blog/<?php echo $bl['id']; ?>" class="more">Подробнее</a>
+                                                                    </p>
+                                                            </div><!-- entry-content -->
+                                            </div><!-- end inner -->
+                                    </div><!-- end col -->
 
-    				<div class="col-md-4">
-    					<figure class="blog-thumb">
-    						<img src="images/content/blog-thumb-01.jpg" alt="">
-    					</figure>
-    					<div class="inner">
-    						<div class="entry-header">
-								<time class="published" datetime="2014-12-13" title="December 13, 2014 - 21:12 pm">December 13, 2014</time>
-								<h2 class="post-title entry-title">
-									<a href="#">Claritas Est Etiam Processus Dynamicus</a>
-								</h2>
-							</div><!-- end entry-header -->
-							<div class="entry-content">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibhona euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-								<p>
-									<a href="#" class="more">Read More</a>
-								</p>
-							</div><!-- entry-content -->
-    					</div><!-- end inner -->
-    				</div><!-- end col -->
-
-    				<div class="col-md-4">
+                                <?php endforeach; ?>
+    				<!--<div class="col-md-4">
     					<figure class="blog-thumb">
     						<img src="images/content/blog-thumb-01.jpg" alt="">
     					</figure>
@@ -186,35 +193,15 @@
 									<a href="#">Mazim Placerat Facer Possim Assum</a>
 								</h2>
 							</div><!-- end entry-header -->
-							<div class="entry-content">
+							<!--<div class="entry-content">
 								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibhona euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 								<p>
 									<a href="#" class="more">Read More</a>
 								</p>
 							</div><!-- entry-content -->
-    					</div><!-- end inner -->
-    				</div><!-- end col -->
-
-    				<div class="col-md-4">
-    					<figure class="blog-thumb">
-    						<img src="images/content/blog-thumb-01.jpg" alt="">
-    					</figure>
-    					<div class="inner">
-    						<div class="entry-header">
-								<time class="published" datetime="2014-12-13" title="December 13, 2014 - 21:12 pm">December 13, 2014</time>
-								<h2 class="post-title entry-title">
-									<a href="#">Tempor Cum Soluta Nobis Eleifend</a>
-								</h2>
-							</div><!-- end entry-header -->
-							<div class="entry-content">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibhona euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-								<p>
-									<a href="#" class="more">Read More</a>
-								</p>
-							</div><!-- entry-content -->
-    					</div><!-- end inner -->
-    				</div><!-- end col -->
-
+    					<!--</div><!-- end inner -->
+    				<!--</div><!-- end col -->  			
+    				 
     			</div><!-- end row -->
     		</div><!-- end container -->
     	</div><!-- end blog section -->

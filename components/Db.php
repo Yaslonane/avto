@@ -14,11 +14,17 @@ class Db{
         $params = include($paramsPath);
 
         $dsn = "mysql:host={$params['host']};dbname={$params['dbname']}";
-        $db = new PDO($dsn, $params['user'], $params['password']);
-
-        $db->exec('SET NAMES utf8'); //задаём кодировку ввода/вывода БД
+        
+        try{
+            $db = new PDO($dsn, $params['user'], $params['password']);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $db->exec('SET NAMES utf8'); //задаём кодировку ввода/вывода БД
 
         return $db;
+        } catch (PDOException $e){
+            echo "Error connect DB:" . $e->getMessage();
+        }
+        
     }
 
 }
