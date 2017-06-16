@@ -79,10 +79,14 @@ class Blogs{
         }
     }
     
-    public static function getTotalPostsInCategory($categoryId){
+    public static function getTotalPostsInCategory($categoryId = false){
         $db = Db::getConnection();
         
-        $result = $db->query('SELECT count(id) AS count FROM blog WHERE is_publication = 1 AND category_id="'.$categoryId.'"');
+        $sql = "SELECT count(id) AS count FROM blog WHERE is_publication = 1";
+        
+        if($categoryId) $sql .= " AND category_id=".$categoryId . "";
+        
+        $result = $db->query($sql);
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $row = $result->fetch();
         

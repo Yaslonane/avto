@@ -42,7 +42,7 @@
     							<ul class="menu">
     								<li class="active"><a href="index.html">Домой</a></li>
                                     <li><a href="about.html">О нас</a></li>
-    								<li class="has-child"><a href="services">Услуги</a>
+    								<li class="has-child"><a href="../services">Услуги</a>
 										<ul class="sub-menu">
 											<li><a href="service-single.html">Услуга 1</a></li>
                                             <li><a href="service-single.html">Услуга 2</a></li>
@@ -61,7 +61,7 @@
 											<li><a href="404.html">404 Страница</a></li>
 										</ul>
     								</li>
-    								<li><a href="blog.html">Блог</a>
+    								<li><a href="../blogs">Блог</a>
                                         <ul class="sub-menu">
                                             <li><a href="blog-single.html">Запись блога 1</a></li>
                                         </ul>
