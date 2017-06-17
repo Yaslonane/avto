@@ -7,10 +7,10 @@
  */
 
 return array(
-    'host' => 'localhost',//'zashchepkin.ru',
+    'host' => 'zashchepkin.ru',//'zashchepkin.ru',
     'dbname' => 'avto',
     'user' => 'andrey',
-    'password' => '123456',//A1qwerty',
+    'password' => 'A1qwerty',//A1qwerty',
 );
 
            // $db->exec('SET NAMES utf8'); //задаём кодировку ввода/вывода БД*/

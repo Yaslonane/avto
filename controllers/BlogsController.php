@@ -28,8 +28,7 @@ class BlogsController {
         
         $pagination = new Pagination($total, $page, /*Blogs::SHOW_BY_DEFAULT*/6, 'page-');
         
-        
-        $posts = Services::getAllServices();
+        $posts = Blogs::getPostsListByCategory($categoryId = false, $page);
         
         require_once(ROOT . TMPL . 'blogs.php');
         

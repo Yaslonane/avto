@@ -12,7 +12,7 @@ class Blogs{
      * Return single news item with specified id
      * @param integer $id
      */
-    const SHOW_BY_DEFAULT = 3;
+    const SHOW_BY_DEFAULT = 6;
     /*
      * возвращаем массив продуктов
      */
@@ -39,14 +39,18 @@ class Blogs{
     
     public static function getPostsListByCategory($categoryId = false, $page =1){
         
-        if($categoryId){
-            
             $page = intval($page);
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
             
             $db = Db::getConnection();
             $products = array();
-            $result = $db->query('SELECT * FROM blog WHERE is_publication = 1 AND category_id = '.$categoryId.' ORDER BY id DESC LIMIT '.self::SHOW_BY_DEFAULT.' OFFSET '.$offset);
+            $sql = "SELECT * FROM blog WHERE is_publication = 1";
+            
+            if($categoryId) $sql .= " AND category_id=".$categoryId . "";
+            
+            $sql .= " ORDER BY id DESC LIMIT ".self::SHOW_BY_DEFAULT." OFFSET ".$offset;
+            
+            $result = $db->query($sql);
             
             $i = 0;
             while ($row = $result->fetch()){ //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
@@ -57,7 +61,7 @@ class Blogs{
             }
             
             return $products;
-        }
+            
     }
     
     public static function getPostById($id){
@@ -92,6 +96,62 @@ class Blogs{
         
         return $row['count'];
     }
+    
+    public static function changeDate($date){
+        
+        $translate = array(
+            "am" => "дп",
+            "pm" => "пп",
+            "AM" => "ДП",
+            "PM" => "ПП",
+            "Monday" => "Понедельник",
+            "Mon" => "Пн",
+            "Tuesday" => "Вторник",
+            "Tue" => "Вт",
+            "Wednesday" => "Среда",
+            "Wed" => "Ср",
+            "Thursday" => "Четверг",
+            "Thu" => "Чт",
+            "Friday" => "Пятница",
+            "Fri" => "Пт",
+            "Saturday" => "Суббота",
+            "Sat" => "Сб",
+            "Sunday" => "Воскресенье",
+            "Sun" => "Вс",
+            "January" => "Января",
+            "Jan" => "Янв",
+            "February" => "Февраля",
+            "Feb" => "Фев",
+            "March" => "Марта",
+            "Mar" => "Мар",
+            "April" => "Апреля",
+            "Apr" => "Апр",
+            "May" => "Мая",
+            "May" => "Мая",
+            "June" => "Июня",
+            "Jun" => "Июн",
+            "July" => "Июля",
+            "Jul" => "Июл",
+            "August" => "Августа",
+            "Aug" => "Авг",
+            "September" => "Сентября",
+            "Sep" => "Сен",
+            "October" => "Октября",
+            "Oct" => "Окт",
+            "November" => "Ноября",
+            "Nov" => "Ноя",
+            "December" => "Декабря",
+            "Dec" => "Дек",
+            "st" => "ое",
+            "nd" => "ое",
+            "rd" => "е",
+            "th" => "ое"
+        );
+        
+        
+        return strtr($date, $translate);
+    }
+    
     
     /*public static function getProductsByIds($idsArray){
         
