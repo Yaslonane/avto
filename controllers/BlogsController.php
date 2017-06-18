@@ -30,6 +30,8 @@ class BlogsController {
         
         $posts = Blogs::getPostsListByCategory($categoryId = false, $page);
         
+        //$cat_list_for_post = Blogs::getCategoryByIds($posts['id']);
+        
         require_once(ROOT . TMPL . 'blogs.php');
         
         return true;

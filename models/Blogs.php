@@ -152,7 +152,38 @@ class Blogs{
         return strtr($date, $translate);
     }
     
-    
+    public static function getCategoryByIds($id_post){
+        
+        $id = intval($id_post);
+        
+        $db = Db::getConnection();
+        
+        $sql = "SELECT post_is_category.id_category, category.name
+                FROM post_is_category
+                LEFT JOIN category
+                ON post_is_category.id_category = category.id
+                WHERE post_is_category.id_post = ".$id ;
+        
+        $result = $db->query($sql);
+        if(!$result) return false;
+        else{
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+
+            $i = 0;
+                while ($row = $result->fetch()){
+                    foreach($row as $key => $value) { 
+                                $categoryList[$i][$key] = $value;
+                            }
+                    $i++;
+                }
+
+            return $categoryList;
+        }
+    }
+
+
+
+
     /*public static function getProductsByIds($idsArray){
         
         $products = array();

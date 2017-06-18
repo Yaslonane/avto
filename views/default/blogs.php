@@ -73,9 +73,15 @@
                                             Posted by <a href="#"><?php echo $post['autor']; ?></a>
                                         </span><!-- end author -->
                                         <span class="cat-links">
-                                            <a href="#">mechanical</a>,
-                                            <a href="#">random</a>,
-                                            <a href="#">photography</a>
+                                        <?php $a = Blogs::getCategoryByIds($post['id']);?>
+                                        <?php if($a == false): ?>  "Нет категорий": 
+                                        <?php else:?>
+                                            <?php foreach($a as $catList): ?>
+
+                                                <a href="<?php echo $catList['id_category']; ?>"><?php echo $catList['name']; ?></a>,
+
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                         </span><!-- end cat-links -->
                                         <div class="comment-link">
                                             <i class="fa fa-fw fa-comments"></i>
