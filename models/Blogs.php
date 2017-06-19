@@ -37,7 +37,7 @@ class Blogs{
         return $postsList; //возвращаем массив категорий
     }
     
-    public static function getPostsListByCategory($categoryId = false, $page =1){
+    /*public static function getPostsListByCategory($categoryId = false, $page =1){
         
             $page = intval($page);
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
@@ -62,7 +62,7 @@ class Blogs{
             
             return $products;
             
-    }
+    }*/
     
     public static function getPostById($id){
         
