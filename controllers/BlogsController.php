@@ -28,9 +28,11 @@ class BlogsController {
         
         $pagination = new Pagination($total, $page, /*Blogs::SHOW_BY_DEFAULT*/6, 'page-');
         
-        $posts = Blogs::getPostsListByCategory($categoryId = false, $page);
+        $posts = Blogs::getPreviewPost($categoryId = false, $page);
         
         //$cat_list_for_post = Blogs::getCategoryByIds($posts['id']);
+        //$a = Blogs::getPreviewPost();
+        //var_dump($a);
         
         require_once(ROOT . TMPL . 'blogs.php');
         

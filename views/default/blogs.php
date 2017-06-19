@@ -73,10 +73,9 @@
                                             Posted by <a href="#"><?php echo $post['autor']; ?></a>
                                         </span><!-- end author -->
                                         <span class="cat-links">
-                                        <?php $a = Blogs::getCategoryByIds($post['id']);?>
-                                        <?php if($a == false): ?>  "Нет категорий": 
+                                        <?php if($post['category'] == false): ?>  Без категории
                                         <?php else:?>
-                                            <?php foreach($a as $catList): ?>
+                                            <?php foreach($post['category'] as $catList): ?>
 
                                                 <a href="<?php echo $catList['id_category']; ?>"><?php echo $catList['name']; ?></a>,
 

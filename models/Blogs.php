@@ -165,8 +165,8 @@ class Blogs{
                 WHERE post_is_category.id_post = ".$id ;
         
         $result = $db->query($sql);
-        if(!$result) return false;
-        else{
+        $categoryList = false;
+        
             $result->setFetchMode(PDO::FETCH_ASSOC);
 
             $i = 0;
@@ -178,7 +178,39 @@ class Blogs{
                 }
 
             return $categoryList;
-        }
+        
+    }
+    
+    public static function getPreviewPost($categoryId = false, $page =1){
+        
+        $page = intval($page);
+            $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
+            
+            $db = Db::getConnection();
+            $posts = array();
+            $sql = "SELECT * FROM blog WHERE is_publication = 1";
+            
+            if($categoryId) $sql .= " AND category_id=".$categoryId . "";
+            
+            $sql .= " ORDER BY id DESC LIMIT ".self::SHOW_BY_DEFAULT." OFFSET ".$offset;
+            
+            $result = $db->query($sql);
+            
+            $i = 0;
+            while ($row = $result->fetch()){ //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                
+                $posts[$i]['id'] = $row['id'];
+                $posts[$i]['name'] = $row['name'];
+                $posts[$i]['img'] = $row['img'];
+                $posts[$i]['text_mini'] = $row['text_mini'];
+                $posts[$i]['date'] = $row['date'];
+                $posts[$i]['autor'] = $row['autor'];
+                $posts[$i]['category'] = self::getCategoryByIds($row['id']);
+
+                $i++;
+            }
+            
+            return $posts;
     }
 
 
