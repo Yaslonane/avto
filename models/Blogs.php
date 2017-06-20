@@ -88,7 +88,11 @@ class Blogs{
         
         $sql = "SELECT count(id) AS count FROM blog WHERE is_publication = 1";
         
-        if($categoryId) $sql .= " AND category_id=".$categoryId . "";
+        if($categoryId) {
+                $listIds  = self::getListPostsIdByCategory($categoryId);
+                $listIds = implode(",", $listIds);
+                $sql .= " AND id IN (".$listIds . ")";
+            }
         
         $result = $db->query($sql);
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -190,8 +194,11 @@ class Blogs{
             $posts = array();
             $sql = "SELECT * FROM blog WHERE is_publication = 1";
             
-            if($categoryId) $sql .= " AND category_id=".$categoryId . "";
-            
+            if($categoryId) {
+                $listIds  = self::getListPostsIdByCategory($categoryId);
+                $listIds = implode(",", $listIds);
+                $sql .= " AND id IN (".$listIds . ")";
+            }
             $sql .= " ORDER BY id DESC LIMIT ".self::SHOW_BY_DEFAULT." OFFSET ".$offset;
             
             $result = $db->query($sql);
@@ -211,6 +218,23 @@ class Blogs{
             }
             
             return $posts;
+    }
+    
+    private static function getListPostsIdByCategory($categoryId){
+        
+        $db = Db::getConnection();
+        
+        $sql = "SELECT id_post FROM post_is_category WHERE id_category = ".$categoryId;
+        
+        $result = $db->query($sql);
+        
+        $i = 0;
+            while ($row = $result->fetch()){ //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                $ids[$i] = $row['id_post'];
+                $i++;
+            }
+            
+        return $ids;
     }
 
 

@@ -77,7 +77,7 @@
                                         <?php else:?>
                                             <?php foreach($post['category'] as $catList): ?>
 
-                                                <a href="<?php echo $catList['id_category']; ?>"><?php echo $catList['name']; ?></a>,
+                                                <a href="./category/<?php echo $catList['id_category']; ?>"><?php echo $catList['name']; ?></a>,
 
                                             <?php endforeach; ?>
                                         <?php endif; ?>

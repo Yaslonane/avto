@@ -39,6 +39,26 @@ class BlogsController {
         return true;
     }
     
+    public function actionCategory($categoryId, $page = 1){
+        
+        //$inf = info::getInfo();
+        echo "Hello people".$categoryId. "page --". $page;
+        
+        $total = Blogs::getTotalPostsInCategory($categoryId);
+        
+        $pagination = new Pagination($total, $page, /*Blogs::SHOW_BY_DEFAULT*/6, 'page-');
+        
+        $posts = Blogs::getPreviewPost($categoryId, $page);
+        
+        //$cat_list_for_post = Blogs::getCategoryByIds($posts['id']);
+        //$a = Blogs::getPreviewPost();
+        //var_dump($a);
+        
+        require_once(ROOT . TMPL . 'blogs.php');
+        
+        return true;
+    }
+    
     public function actionView($id) { //функция вывода одного товара с подробным описание по Id
         
         
