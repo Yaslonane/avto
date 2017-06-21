@@ -77,7 +77,7 @@
                                         <?php else:?>
                                             <?php foreach($post['category'] as $catList): ?>
 
-                                                <a href="./category/<?php echo $catList['id_category']; ?>"><?php echo $catList['name']; ?></a>,
+                                                <a href="<?php echo DOMAIN; ?>/blogs/category/<?php echo $catList['id_category']; ?>"><?php echo $catList['name']; ?></a>,
 
                                             <?php endforeach; ?>
                                         <?php endif; ?>
@@ -94,7 +94,7 @@
 
                                     <div class="entry-media">
                                         <?php if(!$post['img']): ?>
-                                            <img src="../images/content/media-01.jpg" alt="">
+                                            <img src="<?php echo DOMAIN; ?>/images/content/media-01.jpg" alt="">
                                         <?php else: ?>
                                             <img src="<?php echo $post['img']; ?>" alt="">
                                         <?php endif; ?>
@@ -151,7 +151,7 @@
                                         <a href="#">Uncategorized</a>
                                     </span>
                                     <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
+                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
                                     </figure>
                                     <h2 class="post-title">
                                         <a href="#">Lorem Ipsum Dolor Sit Amet, Consetetuer Adipiscing Elit</a>
@@ -162,7 +162,7 @@
                                         <a href="#">Building</a>
                                     </span>
                                     <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
+                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
                                     </figure>
                                     <h2 class="post-title">
                                         <a href="#">Euismod Tincidunt ut Laoreet Dolore Magna Aliquam</a>
@@ -173,7 +173,7 @@
                                         <a href="#">Uncategorized</a>
                                     </span>
                                     <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
+                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
                                     </figure>
                                     <h2 class="post-title">
                                         <a href="#">Ullamcorper Suscipit Lobortis Nisl ut Aliquip Commodo Consequat</a>
@@ -184,7 +184,7 @@
                                         <a href="#">Commercial</a>
                                     </span>
                                     <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
+                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
                                     </figure>
                                     <h2 class="post-title">
                                         <a href="#">Quod Mazim Placerat Facer Possim Assum</a>
@@ -195,7 +195,7 @@
                                         <a href="#">Renovation</a>
                                     </span>
                                     <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
+                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
                                     </figure>
                                     <h2 class="post-title">
                                         <a href="#">Claritas est Etiam Processus Dynamicus</a>
@@ -208,6 +208,7 @@
                                 <div class="widget-title-outer">
                                     <h3 class="widget-title">News Categories</h3>
                                 </div>
+                                <?php var_dump($categoryList);?>
                                 <ul>
                                     <li>
                                         <a class="pull-left" href="#">Engine</a>

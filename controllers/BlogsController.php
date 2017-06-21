@@ -50,6 +50,8 @@ class BlogsController {
         
         $posts = Blogs::getPreviewPost($categoryId, $page);
         
+        //$categoryList = Blogs::getListCategory(true);
+        
         //$cat_list_for_post = Blogs::getCategoryByIds($posts['id']);
         //$a = Blogs::getPreviewPost();
         //var_dump($a);

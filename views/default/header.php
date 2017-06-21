@@ -34,7 +34,7 @@
 				        </button>
 
 				        <div class="logo navbar-brand">
-                                            <a href="#"><img src="../images/logo.png" height = "60" alt="" title="Bengkel"></a>
+                                            <a href="#"><img src="<?php echo DOMAIN; ?>/images/logo.png" height = "60" alt="" title="Bengkel"></a>
 				        </div><!-- end logo -->
 
 				        <nav id="primary-navigation" class="site-navigation navbar-collapse collapse" role="navigation">

@@ -236,6 +236,27 @@ class Blogs{
             
         return $ids;
     }
+    
+    /*public static function getListCategory($count = false){
+        
+        $db = Db::getConnection();
+        
+        $sql = "SELECT id, name  FROM category WHERE is_publication = 1";
+        
+        $result = $db->query($sql);
+        
+        $i = 0;
+            while ($row = $result->fetch()){ //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                $categoryList[$i]['id'] = $row['id'];
+                $categoryList[$i]['name'] = $row['name'];
+                if($count) {
+                    $categoryList[$i]['count'] = self::getTotalPostsInCategory($row['id']);
+                }
+                $i++;
+            }
+            
+            return $categoryList;
+    }*/
 
 
 
