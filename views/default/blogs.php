@@ -23,7 +23,8 @@
                 <div class="row">
                     <div id="primary" class="content-area">
                         <div id="content" class="site-content">
-
+                            <?php if(count($posts) == 0): ?>  В данной категории нет записей
+                            <?php else:?>
                             <?php foreach($posts as $post):?>
                             
                             <div class="post format-image hentry">
@@ -110,6 +111,7 @@
                             </div><!-- end format-aside hentry -->
                             
                             <?php endforeach;?>
+                            <?php endif;?>
                             
                             
                         </div><!-- end #content -->
@@ -210,11 +212,13 @@
                                 </div>
                                 <?php var_dump($categoryList);?>
                                 <ul>
+                                    <?php foreach($categoryList as $category):?>
                                     <li>
-                                        <a class="pull-left" href="#">Engine</a>
-                                        <span class="pull-right">17</span>
+                                        <a class="pull-left" href="<?php echo DOMAIN; ?>/blogs/category/<?php echo $category['id'];?>"><?php echo $category['name'];?></a>
+                                        <span class="pull-right"><?php echo $category['count'];?></span>
                                     </li>
-                                    <li>
+                                    <?php endforeach; ?>
+                                    <!--<li>
                                         <a class="pull-left" href="#">Mechanic</a>
                                         <span class="pull-right">14</span>
                                     </li>
@@ -233,7 +237,7 @@
                                     <li>
                                         <a class="pull-left" href="#">Tools</a>
                                         <span class="pull-right">4</span>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div><!-- end widget -->
 

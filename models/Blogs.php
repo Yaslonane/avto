@@ -90,8 +90,10 @@ class Blogs{
         
         if($categoryId) {
                 $listIds  = self::getListPostsIdByCategory($categoryId);
-                $listIds = implode(",", $listIds);
-                $sql .= " AND id IN (".$listIds . ")";
+                if(count($listIds)){
+                    $listIds = implode(",", $listIds);
+                    $sql .= " AND id IN (".$listIds . ")";
+                }else $sql .= " AND id = 0";
             }
         
         $result = $db->query($sql);
@@ -196,10 +198,12 @@ class Blogs{
             
             if($categoryId) {
                 $listIds  = self::getListPostsIdByCategory($categoryId);
-                $listIds = implode(",", $listIds);
-                $sql .= " AND id IN (".$listIds . ")";
+                if(count($listIds)){
+                    $listIds = implode(",", $listIds);
+                    $sql .= " AND id IN (".$listIds . ")";
+                    $sql .= " ORDER BY id DESC LIMIT ".self::SHOW_BY_DEFAULT." OFFSET ".$offset;
+                }else $sql .= " AND id = 0";
             }
-            $sql .= " ORDER BY id DESC LIMIT ".self::SHOW_BY_DEFAULT." OFFSET ".$offset;
             
             $result = $db->query($sql);
             
@@ -228,6 +232,8 @@ class Blogs{
         
         $result = $db->query($sql);
         
+        $ids = array();
+        
         $i = 0;
             while ($row = $result->fetch()){ //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
                 $ids[$i] = $row['id_post'];
@@ -237,7 +243,7 @@ class Blogs{
         return $ids;
     }
     
-    /*public static function getListCategory($count = false){
+    public static function getListCategory($count = false){
         
         $db = Db::getConnection();
         
@@ -249,14 +255,27 @@ class Blogs{
             while ($row = $result->fetch()){ //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
                 $categoryList[$i]['id'] = $row['id'];
                 $categoryList[$i]['name'] = $row['name'];
-                if($count) {
-                    $categoryList[$i]['count'] = self::getTotalPostsInCategory($row['id']);
+                if($count == true) {
+                    $categoryList[$i]['count'] = self::getCountPostsInCategory($row['id']);
                 }
                 $i++;
             }
             
             return $categoryList;
-    }*/
+    }
+    
+    private static  function getCountPostsInCategory($id_category){
+        
+        $db = Db::getConnection();
+        
+        $sql = "SELECT count(id_post) as count  FROM post_is_category WHERE id_category = ".$id_category;
+         
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $row = $result->fetch();
+        
+        return $row['count'];
+    }
 
 
 
