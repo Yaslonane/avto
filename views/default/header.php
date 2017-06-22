@@ -40,9 +40,9 @@
 				        <nav id="primary-navigation" class="site-navigation navbar-collapse collapse" role="navigation">
 				        	<div class="nav-menu">
     							<ul class="menu">
-    								<li class="active"><a href="index.html">Домой</a></li>
+    								<li class="active"><a href="/">Домой</a></li>
                                     <li><a href="about.html">О нас</a></li>
-    								<li class="has-child"><a href="../services">Услуги</a>
+    								<li class="has-child"><a href="<?php echo DOMAIN; ?>/services">Услуги</a>
 										<ul class="sub-menu">
 											<li><a href="service-single.html">Услуга 1</a></li>
                                             <li><a href="service-single.html">Услуга 2</a></li>
@@ -61,7 +61,7 @@
 											<li><a href="404.html">404 Страница</a></li>
 										</ul>
     								</li>
-    								<li><a href="../blogs">Блог</a>
+    								<li><a href="<?php echo DOMAIN; ?>/blogs">Блог</a>
                                         <ul class="sub-menu">
                                             <li><a href="blog-single.html">Запись блога 1</a></li>
                                         </ul>

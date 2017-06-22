@@ -11,11 +11,12 @@ return array(
     'about' => 'site/about',
     'services/([0-9]+)' => 'services/view/$1',
     'services' => 'services/index',
-    'blog/([0-9]+)' => 'blogs/view/$1',   
+    
     'blogs/page-([0-9]+)' => 'blogs/index/$1',
     'blogs/category/([0-9]+)/page-([0-9]+)' => 'blogs/category/$1/$2',
     'blogs/category/([0-9]+)' => 'blogs/category/$1',
     'blogs' => 'blogs/index',
+    'blog/([0-9]+)' => 'blogs/view/$1',   
     'gallery' => 'gallery/index',
     'feedback' => 'feedback/index',
     'user/register' => 'user/register',

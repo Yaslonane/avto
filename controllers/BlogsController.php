@@ -64,9 +64,13 @@ class BlogsController {
     public function actionView($id) { //функция вывода одного товара с подробным описание по Id
         
         
-        $post = Services::getServiceById($id);
+        $post = Blogs::getOnePostById($id);
         
-        require_once(ROOT . TMPL . 'blog_single.php'); //вызываем файл вида страницы с товаром и передаем Id
+        echo "<pre>";
+        var_dump($post);
+        echo "</pre>";
+        
+        require_once(ROOT . TMPL . 'blog-single.php');
         
         return true;
     }

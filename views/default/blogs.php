@@ -90,7 +90,7 @@
                                     </div><!-- end entry-header -->
 
                                     <h1 class="entry-title">
-                                        <a href="./<?php echo $post['id']; ?>"><?php echo $post['name']; ?></a>
+                                        <a href="<?php echo DOMAIN; ?>/blog/<?php echo $post['id']; ?>"><?php echo $post['name']; ?></a>
                                     </h1>
 
                                     <div class="entry-media">

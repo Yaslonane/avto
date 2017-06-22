@@ -264,7 +264,7 @@ class Blogs{
             return $categoryList;
     }
     
-    private static  function getCountPostsInCategory($id_category){
+    private static function getCountPostsInCategory($id_category){
         
         $db = Db::getConnection();
         
@@ -278,7 +278,18 @@ class Blogs{
     }
 
 
-
+    public static function getOnePostById($id){
+        
+        $db = Db::getConnection();
+        
+        $sql = "SELECT * FROM blog WHERE id = ". $id;
+        
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $row = $result->fetch();
+        
+        return $row;
+    }
 
     /*public static function getProductsByIds($idsArray){
         
