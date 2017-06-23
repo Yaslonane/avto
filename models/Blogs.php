@@ -288,6 +288,8 @@ class Blogs{
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $row = $result->fetch();
         
+        $row['category_id'] = self::getCategoryByIds($row['id']);
+        
         return $row;
     }
 

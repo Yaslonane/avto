@@ -30,7 +30,7 @@
                                     <div class="entry-meta">
                                         <div class="entry-date">
                                             <a href="#">
-                                                <time class="published" datetime="2014-12-13" title="December 13, 2014 - 21:12 pm">Dec<span class="date">13</span>2014</time>
+                                                <time class="published" datetime="<?php echo date("M.d.Y",$post['date']); ?>" title="<?php echo Blogs::changeDate(date("j F Y - H:i",$post['date'])); ?>"><?php echo Blogs::changeDate(date("M",$post['date'])); ?><span class="date"><?php echo date("d",$post['date']); ?></span><?php echo date("Y",$post['date']); ?></time>
                                             </a>
                                         </div><!-- end entry-date -->
 
@@ -68,12 +68,17 @@
 
                                     <div class="entry-header">
                                         <span class="author vcard">
-                                            Posted by <a href="#">Johnny Kurniawan</a>
+                                            Posted by <a href="#"><?php echo $post['autor']; ?></a>
                                         </span><!-- end author -->
                                         <span class="cat-links">
-                                            <a href="#">mechanical</a>,
-                                            <a href="#">random</a>,
-                                            <a href="#">photography</a>
+                                            <?php if($post['category_id'] == false): ?>  Без категории
+                                        <?php else:?>
+                                            <?php foreach($post['category_id'] as $catList): ?>
+
+                                                <a href="<?php echo DOMAIN; ?>/blogs/category/<?php echo $catList['id_category']; ?>"><?php echo $catList['name']; ?></a>,
+
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                         </span><!-- end cat-links -->
                                         <div class="comment-link">
                                             <i class="fa fa-fw fa-comments"></i>
@@ -82,58 +87,31 @@
                                     </div><!-- end entry-header -->
 
                                     <h1 class="entry-title">
-                                        <a href="#">Typi Non Habent Claritatem Insitam Est Usus Legentis in Qui Facit Eorum Claritatem</a>
+                                        <a href="#"><?php echo $post['name']; ?></a>
                                     </h1>
 
                                     <div class="entry-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit <a href="#">lobortis nisl</a> ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
+                                        <?php echo $post['text_mini']; ?>
                                         <figure class="wp-caption">
-                                            <img src="images/content/image-49.png" alt="">
+                                            <?php if(!$post['img']): ?>
+                                            <img src="<?php echo DOMAIN; ?>/images/content/image-49.png" alt="">
                                             <figcaption class="wp-caption-text">Image Caption : Sample Image from Shutterstock Photos</figcaption>
+                                        <?php else: ?>
+                                            <img src="<?php echo $post['img']; ?>" alt="">
+                                            <figcaption class="wp-caption-text">Image Caption : Sample Image from Shutterstock Photos</figcaption>
+                                        <?php endif; ?>
                                         </figure>
-                                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
-                                        <blockquote>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</blockquote>
-                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
-                                        <h2>Heading Font Size</h2>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </p>
-                                        <ul>
-                                            <li>Vulputate velit esse molestie</li>
-                                            <li>Typi non habent claritatem insitam</li>
-                                            <li>Vero eros et accumsan et iusto odio</li>
-                                            <li>Investigationes demonstraverunt lectores legere</li>
-                                            <li>Eleifend option congue nihil imperdiet</li>
-                                        </ul>
-                                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.</p>
-                                        <h4>Heading Two : Table Section</h4>
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>HEADING ONE</th>
-                                                    <th>HEADING TWO</th>
-                                                    <th>HEADING THREE</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Division One</td>
-                                                    <td>Division One</td>
-                                                    <td>Division One</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Division Two</td>
-                                                    <td>Division Two</td>
-                                                    <td>Division Two</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Division Three</td>
-                                                    <td>Division Three</td>
-                                                    <td>Division Three</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit <a href="#">lobortis nisl</a> ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
-                                        <p>
-                                            <span>Categories : <a href="#"><em>Uncategorized</em></a></span><br/>
+                                        <?php echo $post['text']; ?>
+                                            <span>Categories : 
+                                            <?php if($post['category_id'] == false): ?>  Без категории
+                                            <?php else:?>
+                                            <?php foreach($post['category_id'] as $catList): ?>
+
+                                                <a href="<?php echo DOMAIN; ?>/blogs/category/<?php echo $catList['id_category']; ?>"><?php echo $catList['name']; ?></a>,
+
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                            </span><br/>
                                             <span>Tags : <a href="#"><em>News</em></a> , <a href="#"><em>Documentation</em></a></span>
                                         </p>
                                     </div><!-- end entry-content -->
@@ -361,98 +339,18 @@
                             </div><!-- end searchform -->
                         </div><!-- end search widget -->
 
-                        <div class="widget post-type-widget">
-                            <div class="widget-title-outer">
-                                <h3 class="widget-title">Recent Posts</h3>
-                            </div>
-                            <ul>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Uncategorized</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Lorem Ipsum Dolor Sit Amet, Consetetuer Adipiscing Elit</a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Building</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Euismod Tincidunt ut Laoreet Dolore Magna Aliquam</a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Uncategorized</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Ullamcorper Suscipit Lobortis Nisl ut Aliquip Commodo Consequat</a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Commercial</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Quod Mazim Placerat Facer Possim Assum</a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Renovation</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Claritas est Etiam Processus Dynamicus</a>
-                                    </h2>
-                                </li>
-                            </ul>
-                            </div><!-- end widget -->
 
                             <div class="widget widget_categories">
                                 <div class="widget-title-outer">
-                                    <h3 class="widget-title">News Categories</h3>
+                                    <h3 class="widget-title">Категории</h3>
                                 </div>
                                 <ul>
+                                    <?php foreach($categoryList as $category):?>
                                     <li>
-                                        <a class="pull-left" href="#">Engine</a>
-                                        <span class="pull-right">17</span>
+                                        <a class="pull-left" href="<?php echo DOMAIN; ?>/blogs/category/<?php echo $category['id'];?>"><?php echo $category['name'];?></a>
+                                        <span class="pull-right"><?php echo $category['count'];?></span>
                                     </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Mechanic</a>
-                                        <span class="pull-right">14</span>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Uncategorized</a>
-                                        <span class="pull-right">10</span>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Reparation</a>
-                                        <span class="pull-right">8</span>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Service</a>
-                                        <span class="pull-right">6</span>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Tools</a>
-                                        <span class="pull-right">4</span>
-                                    </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div><!-- end widget -->
 

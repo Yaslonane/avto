@@ -66,9 +66,7 @@ class BlogsController {
         
         $post = Blogs::getOnePostById($id);
         
-        echo "<pre>";
-        var_dump($post);
-        echo "</pre>";
+        $categoryList = Blogs::getListCategory(true);
         
         require_once(ROOT . TMPL . 'blog-single.php');
         
