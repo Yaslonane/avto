@@ -38,26 +38,16 @@
                                             <i class="fa fa-fw fa-share-alt"></i>
                                             <a href="#">Share This</a>
                                             <div class="other-share">
-                                                <a href="#" class="facebook">
-                                                    <i class="fa fa-fw fa-facebook"></i>
-                                                    <span class="icon-title">Facebook</span>
-                                                </a>
-                                                <a href="#" class="twitter">
-                                                    <i class="fa fa-fw fa-twitter"></i>
-                                                    <span class="icon-title">Twitter</span>
-                                                </a>
-                                                <a href="#" class="linkedin">
-                                                    <i class="fa fa-fw fa-linkedin"></i>
-                                                    <span class="icon-title">Linkedin</span>
-                                                </a>
-                                                <a href="#" class="google-plus">
-                                                    <i class="fa fa-fw fa-google-plus"></i>
-                                                    <span class="icon-title">Google Plus</span>
-                                                </a>
-                                                <a href="#" class="pinterest">
-                                                    <i class="fa fa-fw fa-pinterest"></i>
-                                                    <span class="icon-title">Pinterest</span>
-                                                </a>
+                                                <script type="text/javascript">(function() {
+  if (window.pluso)if (typeof window.pluso.start == "function") return;
+  if (window.ifpluso==undefined) { window.ifpluso = 1;
+    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+    var h=d[g]('body')[0];
+    h.appendChild(s);
+  }})();</script>
+<div class="pluso" data-background="transparent" data-options="medium,round,multiline,vertical,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div>
                                             </div><!-- end other-share -->   
                                         </div><!-- end social-share -->
 
