@@ -14,6 +14,7 @@ return array(
     
     'adminpanel' => 'AdminPanel/index',
     'login' => 'User/login',
+    'logout' => 'User/logout',
     
     'blogs/page-([0-9]+)' => 'blogs/index/$1',
     'blogs/category/([0-9]+)/page-([0-9]+)' => 'blogs/category/$1/$2',

@@ -76,7 +76,7 @@ class user {
         
         $result = $db->prepare($sql);
         $result->bindParam(':email', $email, PDO::PARAM_INT);
-        $result->bindParam(':password', $password, PDO::PARAM_INT);
+        $result->bindParam(':password', md5($password), PDO::PARAM_INT);
         $result->execute();
         
         $user = $result->fetch();

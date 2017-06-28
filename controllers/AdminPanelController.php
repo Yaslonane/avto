@@ -22,6 +22,8 @@ class AdminPanelController {
         
         var_dump($_SESSION);
         
+        
+        
         require_once (ROOT . ADM_TMPL . 'index.php');
         
         return true;
