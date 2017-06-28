@@ -73,7 +73,7 @@
 				        </nav><!-- end #primary-navigation -->
 
 				        <div class="appoinment-header">
-				        	<a href="contact.html" class="btn btn-md btn-default">Make an Appoinment</a>
+				        	<a href="contact.html" class="btn btn-md btn-default">Войти</a>
 				        </div>
 
     				</div><!-- end row -->

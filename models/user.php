@@ -57,7 +57,7 @@ class user {
         
         $db = Db::getConnection();
         
-        $sql = 'SELECT COUNT(*) FROM user WHERE email = :email';
+        $sql = 'SELECT COUNT(*) FROM users WHERE email = :email';
         
         $result = $db->prepare($sql);
         $result->bindParam(':email', $email, PDO::PARAM_STR);
@@ -72,7 +72,7 @@ class user {
         
         $db = Db::getConnection();
         
-        $sql = 'SELECT * FROM user WHERE email = :email AND password = :password';
+        $sql = 'SELECT * FROM users WHERE email = :email AND password = :password';
         
         $result = $db->prepare($sql);
         $result->bindParam(':email', $email, PDO::PARAM_INT);
@@ -112,7 +112,7 @@ class user {
             
             $db = Db::getConnection();
             
-            $sql = 'SELECT * FROM user WHERE id = :id';
+            $sql = 'SELECT * FROM users WHERE id = :id';
             $result = $db->prepare($sql);
             $result->bindParam(':id', $id, PDO::PARAM_INT);
             $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -126,7 +126,7 @@ class user {
         
         $db = DB::getConnection();
         
-        $sql = 'UPDATE user SET name=:name, password=:password, email=:email WHERE id=:id';
+        $sql = 'UPDATE users SET name=:name, password=:password, email=:email WHERE id=:id';
         
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);

@@ -70,7 +70,7 @@ class UserController {
             
             // valid data login and password
             if(!user::checkEmail($email)){
-                $errors[] = 'Неверный e-mail';
+                $errors[] = 'Неверный e-mail '. $email;
             }
             if(!user::checkPassword($password)){
                 $errors[] = 'Пароль не должен быть короче 6 символов';
@@ -85,11 +85,11 @@ class UserController {
             else {
                 user::auth($userId);
                 
-                header("Location: /cabinet/");
+                header("Location: /adminpanel/");
             }
         }
         
-        require_once (ROOT . TMPL . 'login.php');
+        require_once (ROOT . ADM_TMPL . 'login.php');
         
         return true;
     }

@@ -12,6 +12,9 @@ return array(
     'services/([0-9]+)' => 'services/view/$1',
     'services' => 'services/index',
     
+    'adminpanel' => 'AdminPanel/index',
+    'login' => 'User/login',
+    
     'blogs/page-([0-9]+)' => 'blogs/index/$1',
     'blogs/category/([0-9]+)/page-([0-9]+)' => 'blogs/category/$1/$2',
     'blogs/category/([0-9]+)' => 'blogs/category/$1',

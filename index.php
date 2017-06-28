@@ -19,6 +19,7 @@ session_start();
 
 define('ROOT', dirname(__FILE__)); //инициализируем константу содержащую расположение директории сайта на сервере
 define('TMPL', '/views/default/'); //инициализируем константу содержащую путь до текущего оформления сайта
+define('ADM_TMPL', '/views/adm_default/'); //инициализируем константу содержащую путь до текущего оформления сайта
 define('DOMAIN', 'http://avto.local'); //инициализируем константу содержащую домен сайта
 
 require_once(ROOT . '/components/Autoload.php');
