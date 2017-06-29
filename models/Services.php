@@ -27,6 +27,26 @@ class Services {
         return $servicesList; //возвращаем массив
     }
     
+    public static function getAllServicesAdmin(){ //получаем все услуги
+        
+        $db = Db::getConnection(); //инициализируем подключение к бд
+        
+        $servicesList = array(); //инициализируем переменную 
+        
+        $result = $db->query('SELECT * FROM services'); // получаем из базы список
+        
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $i = 0;
+        while($row = $result->fetch()){
+            foreach($row as $key => $value) { //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                $servicesList[$i][$key] = $value;
+            }
+            $i++;
+        }
+        return $servicesList; //возвращаем массив
+    }
+    
     public static function getLimitServices($limit = 3){ //получаем случайные услуги
         
         $db = Db::getConnection(); //инициализируем подключение к бд

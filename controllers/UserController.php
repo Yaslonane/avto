@@ -29,7 +29,7 @@ class UserController {
             
             $errors = false;
             
-            if(!user::checkName($name)){
+            if(!User::checkName($name)){
                 $errors[] = 'Warning!!! It\'s name short 2 elements';
             }
             
@@ -41,12 +41,12 @@ class UserController {
                 $errors[] = 'Warning!!! It\'s e-mail dont valid';
             }
             
-            if(user::checkEmailExists($email)){
+            if(User::checkEmailExists($email)){
                 $errors[] = 'Sorry, this is e-mail is using';
             }
             
             if($errors == false){
-                $result = (user::register($name, $password, $email));
+                $result = (User::register($name, $password, $email));
             }
             
         }
@@ -69,21 +69,21 @@ class UserController {
             $errors = false;
             
             // valid data login and password
-            if(!user::checkEmail($email)){
+            if(!User::checkEmail($email)){
                 $errors[] = 'Неверный e-mail '. $email;
             }
-            if(!user::checkPassword($password)){
+            if(!User::checkPassword($password)){
                 $errors[] = 'Пароль не должен быть короче 6 символов';
             }
             
             //check exist user
-            $userId = user::checkUserData($email, $password);
+            $userId = User::checkUserData($email, $password);
             
             if($userId == false){
                 $errors[] = 'Uncorrect login and/or password';
             }
             else {
-                user::auth($userId);
+                User::auth($userId);
                 
                 header("Location: /adminpanel/");
             }

@@ -292,6 +292,39 @@ class Blogs{
         
         return $row;
     }
+    
+    public static function getOnePostByIdAdmin($id){
+        
+        $db = Db::getConnection();
+        
+        $sql = "SELECT * FROM blog WHERE id = ". $id;
+        
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $row = $result->fetch();
+        
+        return $row;
+    }
+    
+    public static function getAllPostsAdmin(){ //получаем все постов
+        
+        $db = Db::getConnection(); //инициализируем подключение к бд
+        
+        $servicesList = array(); //инициализируем переменную 
+        
+        $result = $db->query('SELECT * FROM blog'); // получаем из базы список
+        
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $i = 0;
+        while($row = $result->fetch()){
+            foreach($row as $key => $value) { //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                $PostsList[$i][$key] = $value;
+            }
+            $i++;
+        }
+        return $PostsList; //возвращаем массив
+    }
 
     /*public static function getProductsByIds($idsArray){
         

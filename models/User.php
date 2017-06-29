@@ -11,7 +11,7 @@
  *
  * @author andrey
  */
-class user {
+class User {
     //put your code here
     
     public static function register($name, $password, $email){
@@ -92,7 +92,7 @@ class user {
             return $_SESSION['user'];
         }
         
-        header("location: /user/login/");
+        header("location: ". DOMAIN ."/login");
     }
 
         public static function auth($userId){
@@ -120,6 +120,25 @@ class user {
             
             return $result->fetch();
         }
+    }
+    
+    public static function getAllUsers() {
+
+            $db = Db::getConnection();
+            
+            $sql = 'SELECT * FROM users';
+            $result = $db->query($sql);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            
+            $i = 0;
+            while($row = $result->fetch()){
+                foreach($row as $key => $value) { //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                    $UsersList[$i][$key] = $value;
+                }
+                $i++;
+            }
+            
+            return $UsersList;
     }
     
     public static function edit($id, $name, $password, $email){
