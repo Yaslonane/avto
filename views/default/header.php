@@ -73,7 +73,8 @@
 				        </nav><!-- end #primary-navigation -->
 
 				        <div class="appoinment-header">
-				        	<a href="contact.html" class="btn btn-md btn-default">Войти</a>
+				        	<a href="<?php echo DOMAIN;?>/login" class="btn btn-md btn-default">Войти</a>
+                                                
 				        </div>
 
     				</div><!-- end row -->
