@@ -24,9 +24,10 @@ class AdminpanelController extends AdminBase{
         
         $servicesList = Services::getAllServicesAdmin();
         
-        var_dump($servicesList);
+        //var_dump($servicesList);
         
-        echo "Admin Services";
+        require_once (ROOT . ADM_TMPL . 'services.php');
+        
         return true;
         
     }
@@ -37,9 +38,10 @@ class AdminpanelController extends AdminBase{
         
         $service = Services::getServiceById($id);
         
-        var_dump($service);
+        //var_dump($service);
         
-        echo "Admin edit Services " . $id ;
+        require_once (ROOT . ADM_TMPL . 'service_edit.php');
+        
         return true;
         
     }

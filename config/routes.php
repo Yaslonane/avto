@@ -46,6 +46,7 @@ return array(
     'gallery' => 'gallery/index',
     'feedback' => 'feedback/index',
     'about' => 'site/about',
+    'uploads' => 'site/uploads',
     '' => 'site/index',
 
     /*'printers/([0-9]+)' => 'printers/view/$1',

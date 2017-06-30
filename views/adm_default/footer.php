@@ -9,6 +9,7 @@
     <!-- main content end-->
 </section>
 
+
 <!-- Placed js at the end of the document so the pages load faster -->
 <script src="<?php echo ADM_TMPL; ?>js/jquery-1.10.2.min.js"></script>
 <script src="<?php echo ADM_TMPL; ?>js/jquery-ui-1.9.2.custom.min.js"></script>
@@ -17,13 +18,16 @@
 <script src="<?php echo ADM_TMPL; ?>js/modernizr.min.js"></script>
 <script src="<?php echo ADM_TMPL; ?>js/jquery.nicescroll.js"></script>
 
-<!--easy pie chart-->
-<script src="<?php echo ADM_TMPL; ?>js/easypiechart/jquery.easypiechart.js"></script>
-<script src="<?php echo ADM_TMPL; ?>js/easypiechart/easypiechart-init.js"></script>
+<!--pickers plugins-->
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 
-<!--Sparkline Chart-->
-<script src="<?php echo ADM_TMPL; ?>js/sparkline/jquery.sparkline.js"></script>
-<script src="<?php echo ADM_TMPL; ?>js/sparkline/sparkline-init.js"></script>
+<!--pickers initialization-->
+<script src="<?php echo ADM_TMPL; ?>js/pickers-init.js"></script>
 
 <!--icheck -->
 <script src="<?php echo ADM_TMPL; ?>js/iCheck/jquery.icheck.js"></script>
@@ -42,6 +46,11 @@
 <!--common scripts for all pages-->
 <script src="<?php echo ADM_TMPL; ?>js/scripts.js"></script>
 
+<!--dynamic table-->
+<script type="text/javascript" language="javascript" src="<?php echo ADM_TMPL; ?>js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/data-tables/DT_bootstrap.js"></script>
+<!--dynamic table initialization -->
+<script src="<?php echo ADM_TMPL; ?>js/dynamic_table_init.js"></script>
 
 </body>
 </html>
