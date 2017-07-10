@@ -13,6 +13,9 @@
   <script type="text/javascript" src="<?php echo LIB; ?>/ckeditor/ckeditor.js"></script>
   <script type="text/javascript" src="<?php echo LIB; ?>/AjexFileManager/Ajex.js"></script>
   
+      <!--multi-select-->
+    <link rel="stylesheet" type="text/css" href="<?php echo ADM_TMPL; ?>js/jquery-multi-select/css/multi-select.css" />
+  
 
   <link href="<?php echo ADM_TMPL; ?>css/style.css" rel="stylesheet">
   <link href="<?php echo ADM_TMPL; ?>css/style-responsive.css" rel="stylesheet">
@@ -82,6 +85,7 @@
                     <li ><a href="<?php echo DOMAIN; ?>/adminpanel">Главная</a></li>
                     <li class="active"><a href="<?php echo DOMAIN; ?>/adminpanel/services">Услуги</a></li>
                     <li><a href="<?php echo DOMAIN; ?>/adminpanel/posts">Блог</a></li>
+                    <li><a href="<?php echo DOMAIN; ?>/adminpanel/category">Категории</a></li>
                     <li><a href="<?php echo DOMAIN; ?>/adminpanel/gallery">Галерея</a></li>
                     <li><a href="<?php echo DOMAIN; ?>/adminpanel/users">Пользователи</a></li>
                     <li class="dropdown">

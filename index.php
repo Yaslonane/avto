@@ -22,6 +22,7 @@ define('TMPL', '/views/default/'); //инициализируем констан
 define('ADM_TMPL', '/views/adm_default/'); //инициализируем константу содержащую путь до текущего оформления сайта
 define('LIB', '/lib/'); //инициализируем константу содержащую путь до текущего оформления сайта
 define('DOMAIN', 'http://avto.local'); //инициализируем константу содержащую домен сайта
+define('IMG_CONT', '/images/content/'); //инициализируем константу содержащую домен сайта
 
 require_once(ROOT . '/components/Autoload.php');
 

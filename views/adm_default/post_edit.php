@@ -3,7 +3,7 @@
      <!--body wrapper start-->
     <section class="panel">
         <header class="panel-heading">
-            Редактирование услуги
+            Редактирование записи блога 
         </header>
         <div class="panel-body">
         <div class="wrapper">
@@ -11,16 +11,16 @@
             <form action="" class="form-horizontal adminex-form" enctype="multipart/form-data" method="post">
             <div  class="col-sm-4">
                 <div class="form-group" >
-                    <?php if(!$service['img']): ?>
+                    <?php if(!$post['img']): ?>
                         <img src="<?php echo DOMAIN; ?>/images/content/service-01.jpg" "/>
                     <?php else: ?>
-                        <img width="300 px" src="<?php echo DOMAIN ."/". $service['img']; ?>"/>
-                        <input type="hidden" name="img_link" value="<?php echo $service['img'] ?>"/>
+                        <img width="300 px" src="<?php echo DOMAIN ."/". $post['img']; ?>"/>
+                        <input type="hidden" name="img_link" value="<?php echo $post['img'] ?>"/>
                     <?php endif; ?>
                 </div>
                 
                     
-                    <input type="hidden" name="id" value="<?php echo $service['id'] ?>"/>
+                    <input type="hidden" name="id" value="<?php echo $post['id'] ?>"/>
                     
                     <div class="form-group" >
                         <input type="file" name="img" class="default" />
@@ -33,35 +33,35 @@
 <div class="col-sm-8">                
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Заголовок страницы</label>
-                        <div class="col-sm-10"><input type="text" class="form-control" name="title" value="<?php echo $service['title']?>"></div>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="title" value="<?php echo $post['title']?>"></div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Опубликован</label>
                             <div class="col-sm-10">
                                 <select class="form-control m-bot15" name="is_publication">
-                                    <option value="1" <?php if($service['is_publication'] == 1):?> selected <?php endif; ?>>Опубликован</option>
-                                    <option value="0" <?php if($service['is_publication'] == 0):?> selected <?php endif; ?>>Снят с публикации</option>
+                                    <option value="1" <?php if($post['is_publication'] == 1):?> selected <?php endif; ?>>Опубликован</option>
+                                    <option value="0" <?php if($post['is_publication'] == 0):?> selected <?php endif; ?>>Снят с публикации</option>
                                 </select>
                             </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2">Дата</label>
                         <div class="col-sm-10 col-xs-11">
-                            <input class="form-control form-control-inline input-medium default-date-picker" name="date" size="16" type="text" value="<?php echo date("m-d-Y", $service['date']); ?>" />
+                            <input class="form-control form-control-inline input-medium default-date-picker" name="date" size="16" type="text" value="<?php echo date("m-d-Y", $post['date']); ?>" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 col-sm-2 control-label">Название услуги</label>
-                        <div class="col-sm-10"><input type="text" class="form-control" name="name" value="<?php echo $service['name']?>"></div>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="name" value="<?php echo $post['name']?>"></div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 col-sm-2 control-label">Автор</label>
-                        <div class="col-sm-10"><input type="text" class="form-control" name="autor" value="<?php echo $service['autor']?>"></div>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="autor" value="<?php echo $post['autor']?>"></div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 col-sm-2 control-label">Анонс</label>
                         <div class="col-sm-10">
-                             <textarea name="text_mini" class="form-control" rows="6"><?php echo $service['text_mini']?></textarea>
+                             <textarea name="text_mini" class="form-control" rows="6"><?php echo $post['text_mini']?></textarea>
                         </div>
                     </div>
  </div>
@@ -70,7 +70,7 @@
                         <hr>
                         <label class="control-label">Текст</label>
                         <div>
-                            <textarea id="editor1" name="text" class="form-control" rows="100"><?php echo $service['text']?></textarea>
+                            <textarea id="editor1" name="text" class="form-control" rows="100"><?php echo $post['text']?></textarea>
                         </div>
                         <script type="text/javascript">
                             CKEDITOR.replace( 'editor1',{'filebrowserBrowseUrl':'<?php echo LIB ?>kcfinder/browse.php?type=files',
@@ -85,16 +85,29 @@
                     <div class="form-group col-sm-6">
                         <label class="control-label">Meta-kw</label>
                         <div>
-                            <textarea name="meta_kw" class="form-control " rows="6"><?php echo $service['meta_kw']?></textarea>
+                            <textarea name="meta_kw" class="form-control " rows="6"><?php echo $post['meta_kw']?></textarea>
                             </div>
                     </div>
                     
                     <div class="form-group col-sm-6">
                         <label class="control-label">Meta-d</label>
                         <div>
-                            <textarea name="meta_d" class="form-control" rows="6"><?php echo $service['meta_d']?></textarea>
+                            <textarea name="meta_d" class="form-control" rows="6"><?php echo $post['meta_d']?></textarea>
                             </div>
                     </div>
+    
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Default</label>
+
+                            <div class="col-md-9">
+                                <select multiple="multiple" class="multi-select" id="my_multi_select1"
+                                        name="categoryes[]">
+                                    <?php foreach ($category as $cat): ?>
+                                        <option <?php echo (Blogs::changeCatInPost($cat_in_post, $cat['id']) == true) ? "selected" : ""; ?> value="<?php echo $cat['id']?>"><?php echo $cat['name']?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                        </div>
                     
                     <button class="btn btn-primary" type="submit" name="save">Сохранить</button>
             </div>    

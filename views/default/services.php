@@ -24,9 +24,9 @@
                     <div id="primary" class="content-area fullwidth">
                         <div id="content" class="site-content">
 
-                            <div class="row service-wrapper">
+                            <div class="row service-wrapper row-flex">
                                 <?php foreach($serv as $sr): ?>
-                                    <div class="service-col-sq">
+                                    <div class="service-col-sq clearfix">
                                         <h2><a href="../services/<?php echo $sr['id'] ?>"><?php echo $sr['name'] ?></a></h2>
                                         <figure>
                                             <?php if(!$sr['img']): ?>
@@ -304,5 +304,6 @@
                 </div><!-- end row -->
             </div><!-- end container -->
         </div><!-- end faq-contact-section -->
+      
 
 <?php require_once 'footer.php';?>

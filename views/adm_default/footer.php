@@ -43,6 +43,11 @@
 <script src="<?php echo ADM_TMPL; ?>js/flot-chart/jquery.flot.time.js"></script>
 <script src="<?php echo ADM_TMPL; ?>js/main-chart.js"></script>
 
+<!--multi-select-->
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/jquery-multi-select/js/jquery.multi-select.js"></script>
+<script type="text/javascript" src="<?php echo ADM_TMPL; ?>js/jquery-multi-select/js/jquery.quicksearch.js"></script>
+<script src="<?php echo ADM_TMPL; ?>js/multi-select-init.js"></script>
+
 <!--common scripts for all pages-->
 <script src="<?php echo ADM_TMPL; ?>js/scripts.js"></script>
 

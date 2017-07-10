@@ -22,17 +22,17 @@
         </tr>
         </thead>
         <tbody>
-            <?php foreach ($servicesList as $service): ?>
+            <?php foreach ($posts as $post): ?>
         <tr class="gradeA">
-            <td><?php echo $service['title']; ?></td>
-            <td><?php echo $service['name']; ?></td>
-            <td><?php echo $service['autor']; ?></td>
-            <td><?php echo $service['date']; ?></td>
+            <td><?php echo $post['title']; ?></td>
+            <td><?php echo $post['name']; ?></td>
+            <td><?php echo $post['autor']; ?></td>
+            <td><?php echo $post['date']; ?></td>
             <td>
-                <a href="<?php DOMAIN; ?>/adminpanel/publicserv/<?php echo $service['id']; ?>" > <i <?php echo ($service['is_publication'] == 0) ? 'class="fa fa-times"  style="font-size:20px; color:#cc0000 "' : "class='fa fa-check'"; ?>></i></a>
+                <a href="<?php DOMAIN; ?>/adminpanel/publicpost/<?php echo $post['id']; ?>" > <i <?php echo ($post['is_publication'] == 0) ? 'class="fa fa-times"  style="font-size:20px; color:#cc0000 "' : "class='fa fa-check'"; ?>></i></a>
             </td>
-            <td><a href="<?php DOMAIN; ?>/adminpanel/updateservices/<?php echo $service['id']; ?> " ><i class="fa fa-edit"></i></a></td>
-            <td><a href="<?php DOMAIN; ?>/adminpanel/delserv/<?php echo $service['id']; ?>"> <i class="fa fa-trash-o"></i></a></td>
+            <td><a href="<?php DOMAIN; ?>/adminpanel/posts/<?php echo $post['id']; ?> " ><i class="fa fa-edit"></i></a></td>
+            <td><a href="<?php DOMAIN; ?>/adminpanel/delpost/<?php echo $post['id']; ?>"> <i class="fa fa-trash-o"></i></a></td>
         </tr>
             <?php endforeach; ?>
   
@@ -43,11 +43,12 @@
             <div>
                 
             </div>
-            <form action="./createservices" class="form-horizontal adminex-form" method="post">
-                    <label class="col-sm-2 col-sm-2 control-label">Название услуги</label>
+            <form action="./createpost" class="form-horizontal adminex-form" method="post">
+                    <label class="col-sm-2 col-sm-2 control-label">Название записи</label>
                     <div class="col-sm-6"><input type="text" class="form-control" name="name"></div>
                 <button class="btn btn-primary" type="submit" name="create">Создать</button>
             </form>
+
         </div>
         </div>
 

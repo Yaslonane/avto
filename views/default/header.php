@@ -73,8 +73,11 @@
 				        </nav><!-- end #primary-navigation -->
 
 				        <div class="appoinment-header">
+                                            <?php if(AdminBase::checkAdmin() === true): ?>
+				        	<a href="<?php echo DOMAIN;?>/adminpanel/" class="btn btn-md btn-default">Админпанель</a>
+                                            <?php else: ?>
 				        	<a href="<?php echo DOMAIN;?>/login" class="btn btn-md btn-default">Войти</a>
-                                                
+                                            <?php endif; ?>    
 				        </div>
 
     				</div><!-- end row -->
