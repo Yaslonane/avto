@@ -13,7 +13,7 @@
  */
 class GalleryController {
     //put your code here
-    public static $title = "AVTOZONA | Блог";
+    public static $title = "AVTOZONA | Галлерея";
         /*
          * 
          * вывод страницы
@@ -22,8 +22,13 @@ class GalleryController {
          */
     public function actionIndex(){
         
-
+        $albums = Gallery::getAlbumInImages();
         
+        
+        
+        /*echo "<pre>";
+        var_dump($albums);
+        echo "</pre>";*/
         require_once(ROOT . TMPL . 'gallery.php');
         
         return true;

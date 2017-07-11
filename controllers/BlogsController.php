@@ -29,7 +29,7 @@ class BlogsController {
         $pagination = new Pagination($total, $page, /*Blogs::SHOW_BY_DEFAULT*/6, 'page-');
         
         $posts = Blogs::getPreviewPost($categoryId = false, $page);
-        
+        $categoryList = Blogs::getListCategory(true);
         //$cat_list_for_post = Blogs::getCategoryByIds($posts['id']);
         //$a = Blogs::getPreviewPost();
         //var_dump($a);

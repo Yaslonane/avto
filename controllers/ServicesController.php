@@ -26,7 +26,7 @@ class ServicesController{
     
     public function actionView($id) { //функция вывода одного товара с подробным описание по Id
         
-        
+        $srv = Services::getAllServices();
         $service = Services::getServiceById($id);
         
         require_once(ROOT . TMPL . 'service_single.php'); //вызываем файл вида страницы с товаром и передаем Id

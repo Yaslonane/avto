@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="page-title">BLOG PAGE</h2>
+                        <h2 class="page-title">Блог</h2>
                         <div class="breadcrumbs">
                             <ul>
                                 <li>Вы находитесь : </li>
@@ -98,84 +98,18 @@
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                             </span><br/>
-                                            <span>Tags : <a href="#"><em>News</em></a> , <a href="#"><em>Documentation</em></a></span>
                                         </p>
                                     </div><!-- end entry-content -->
 
                                 </div><!-- end inner -->
 
                             </div><!-- end format-image hentry -->
-
-                            <div class="author-wrapper">
-                                <h2>Информация об авторе</h2>
-                                <figure class="author-ava">
-                                    <img src="<?php echo DOMAIN; ?>/images/content/auth-00.png" alt="">
-                                </figure>
-                                <div class="author-context">
-
-                                    <div class="author-name">
-                                        <a href="#">Joko Munandar</a>
-                                    </div><!-- end auth-name -->
-
-                                    <div class="author-content">
-                                        <p>Hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-                                    </div>
-
-                                </div><!-- end author-wrapper -->
-                            </div><!-- end author-area -->
-
-                            <div class="related-content">
-                                <h2>Похожие записи</h2>
-                                <div class="row">
-
-                                    <div class="col-md-4">
-                                        <figure>
-                                            <img src="<?php echo DOMAIN; ?>/images/content/blog-thumb-01.jpg" alt="">
-                                        </figure>
-                                        <div class="related-title">
-                                            <h3><a href="#">Claritas est etiam processus dynamicus</a></h3>
-                                        </div>
-                                    </div><!-- end column -->
-
-                                    <div class="col-md-4">
-                                        <figure>
-                                            <img src="<?php echo DOMAIN; ?>/images/content/blog-thumb-01.jpg" alt="">
-                                        </figure>
-                                        <div class="related-title">
-                                            <h3><a href="#">Claritas est etiam processus dynamicus</a></h3>
-                                        </div>
-                                    </div><!-- end column -->
-
-                                    <div class="col-md-4">
-                                        <figure>
-                                            <img src="<?php echo DOMAIN; ?>/images/content/blog-thumb-01.jpg" alt="">
-                                        </figure>
-                                        <div class="related-title">
-                                            <h3><a href="#">Claritas est etiam processus dynamicus</a></h3>
-                                        </div>
-                                    </div><!-- end column -->
-
-                                </div><!-- end row -->
-                            </div><!-- end related-content -->
-
-                            
                         </div><!-- end #content -->
                         
                     </div><!-- end #primary -->
 
                     <div id="secondary" class="col-md-4">
 
-                        <div id="search-2" class="widget widget_search">
-                            <div class="widget-title-outer">
-                                <h3 class="widget-title">Поиск</h3>
-                            </div>
-                            <div class="searchform">
-                                <form>
-                                    <input type="text" class="txt" name="s" placeholder="Что хотите найти?">
-                                    <input type="submit" value="Найти" class="btn btn-sm">
-                                </form>
-                            </div><!-- end searchform -->
-                        </div><!-- end search widget -->
 
 
                             <div class="widget widget_categories">
@@ -192,23 +126,6 @@
                                 </ul>
                             </div><!-- end widget -->
 
-                            <div class="widget">
-                                <div class="widget-title-outer">
-                                    <h3 class="widget-title">Тэги</h3>
-                                </div>
-                                <div class="tagcloud">
-                                    <a href="#">engine</a>
-                                    <a href="#">mechanic</a>
-                                    <a href="#">uncategorized</a>
-                                    <a href="#">service</a>
-                                    <a href="#">maintain</a>
-                                    <a href="#">automobile</a>
-                                    <a href="#">balancing</a>
-                                    <a href="#">uncategorized</a>
-                                    <a href="#">reparation</a>
-                                    <a href="#">tools</a>
-                                </div>
-                            </div><!-- end widget -->
 
                             <div class="widget">
                                 <div class="widget-title-outer">

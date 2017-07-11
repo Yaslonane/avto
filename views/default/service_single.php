@@ -8,9 +8,9 @@
                         <h2 class="page-title">Наши услуги</h2>
                         <div class="breadcrumbs">
                             <ul>
-                                <li>You're in : </li>
-                                <li>Home</li>
-                                <li>Our Services</li>
+                                <li>Вы находитесь : </li>
+                                <li>Главная</li>
+                                <li>Услуги</li>
                             </ul>
                         </div><!-- end breadcrumbs -->
                     </div><!-- end column -->
@@ -54,27 +54,14 @@
 
                             <div class="widget widget_categories">
                                 <div class="widget-title-outer">
-                                    <h3 class="widget-title">Service Menu</h3>
+                                    <h3 class="widget-title">Все услуги</h3>
                                 </div>
                                 <ul>
-                                    <li>
-                                        <a class="pull-left" href="#">Body Repair &amp; Paint</a>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Routine Maintenance</a>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Balancing</a>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Consuetudium Lectorum</a>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Quinta Decima</a>
-                                    </li>
-                                    <li>
-                                        <a class="pull-left" href="#">Oedem Modo</a>
-                                    </li>
+                                    <?php foreach($srv as $list_srv):?>
+                                        <li>
+                                            <a class="pull-left" href="/services/<?php echo $list_srv['id']?>"><?php echo $list_srv['name']?></a>
+                                        </li>
+                                    <?php endforeach;?>
                                 </ul>
                             </div><!-- end widget -->
 

@@ -70,7 +70,18 @@ class SiteController{
         return true;
     }
     
-    public function actionUploads(){
+    public function actionAbout(){
+        
+        $inf = info::getInfo();
+        
+        //echo "<pre>";
+        //var_dump($inf);
+        //echo "</pre>";
+        require (ROOT . TMPL . 'about.php');
+        return true;
+    }
+
+        public function actionUploads(){
 
             if($_FILES['upload']){
             if (($_FILES['upload'] == "none") OR (empty($_FILES['upload']['name'])) ){

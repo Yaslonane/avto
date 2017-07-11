@@ -5,12 +5,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="page-title">BLOG PAGE</h2>
+                        <h2 class="page-title">Блог</h2>
                         <div class="breadcrumbs">
                             <ul>
-                                <li>You're in : </li>
-                                <li>Home</li>
-                                <li>Blog</li>
+                                <li>Вы здесь : </li>
+                                <li>Главная</li>
+                                <li>Блог</li>
                             </ul>
                         </div><!-- end breadcrumbs -->
                     </div><!-- end column -->
@@ -39,7 +39,7 @@
 
                                         <div class="social-shares">
                                             <i class="fa fa-fw fa-share-alt"></i>
-                                            <a href="#">Share This</a>
+                                            <a href="#">Поделиться</a>
                                             <div class="other-share">
                                                 <script type="text/javascript">(function() {
                                                 if (window.pluso)if (typeof window.pluso.start == "function") return;
@@ -61,7 +61,7 @@
 
                                     <div class="entry-header">
                                         <span class="author vcard">
-                                            Posted by <a href="#"><?php echo $post['autor']; ?></a>
+                                            Автор <a href="#"><?php echo $post['autor']; ?></a>
                                         </span><!-- end author -->
                                         <span class="cat-links">
                                         <?php if($post['category'] == false): ?>  Без категории
@@ -73,10 +73,7 @@
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                         </span><!-- end cat-links -->
-                                        <div class="comment-link">
-                                            <i class="fa fa-fw fa-comments"></i>
-                                            <a href="#">3 Comments</a>
-                                        </div>
+                                  
                                     </div><!-- end entry-header -->
 
                                     <h1 class="entry-title">
@@ -121,86 +118,12 @@
 
                     <div id="secondary" class="col-md-4">
 
-                        <div id="search-2" class="widget widget_search">
-                            <div class="widget-title-outer">
-                                <h3 class="widget-title">Search</h3>
-                            </div>
-                            <div class="searchform">
-                                <form>
-                                    <input type="text" class="txt" name="s" placeholder="Type Keywords">
-                                    <input type="submit" value="search" class="btn btn-sm">
-                                </form>
-                            </div><!-- end searchform -->
-                        </div><!-- end search widget -->
-
-                        <div class="widget post-type-widget">
-                            <div class="widget-title-outer">
-                                <h3 class="widget-title">Recent Posts</h3>
-                            </div>
-                            <ul>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Uncategorized</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Lorem Ipsum Dolor Sit Amet, Consetetuer Adipiscing Elit</a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Building</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Euismod Tincidunt ut Laoreet Dolore Magna Aliquam</a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Uncategorized</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Ullamcorper Suscipit Lobortis Nisl ut Aliquip Commodo Consequat</a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Commercial</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Quod Mazim Placerat Facer Possim Assum</a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <span class="post-category">
-                                        <a href="#">Renovation</a>
-                                    </span>
-                                    <figure class="post-thumbnail">
-                                        <a href="#"><img src="<?php echo DOMAIN; ?>/images/content/thumb-post-01.jpg" alt=""></a>
-                                    </figure>
-                                    <h2 class="post-title">
-                                        <a href="#">Claritas est Etiam Processus Dynamicus</a>
-                                    </h2>
-                                </li>
-                            </ul>
-                            </div><!-- end widget -->
 
                             <div class="widget widget_categories">
                                 <div class="widget-title-outer">
-                                    <h3 class="widget-title">News Categories</h3>
+                                    <h3 class="widget-title">Категории</h3>
                                 </div>
-                                <?php var_dump($categoryList);?>
+                                <?php //var_dump($categoryList);?>
                                 <ul>
                                     <?php foreach($categoryList as $category):?>
                                     <li>
@@ -231,23 +154,7 @@
                                 </ul>
                             </div><!-- end widget -->
 
-                            <div class="widget">
-                                <div class="widget-title-outer">
-                                    <h3 class="widget-title">News Tags</h3>
-                                </div>
-                                <div class="tagcloud">
-                                    <a href="#">engine</a>
-                                    <a href="#">mechanic</a>
-                                    <a href="#">uncategorized</a>
-                                    <a href="#">service</a>
-                                    <a href="#">maintain</a>
-                                    <a href="#">automobile</a>
-                                    <a href="#">balancing</a>
-                                    <a href="#">uncategorized</a>
-                                    <a href="#">reparation</a>
-                                    <a href="#">tools</a>
-                                </div>
-                            </div><!-- end widget -->
+                          
 
                             <div class="widget">
                                 <div class="widget-title-outer">

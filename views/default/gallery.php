@@ -6,12 +6,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="page-title">GALLERY PAGE</h2>
+                        <h2 class="page-title">Галлерея</h2>
                         <div class="breadcrumbs">
                             <ul>
-                                <li>You're in : </li>
-                                <li>Home</li>
-                                <li>Gallery</li>
+                                <li>Вы здесь : </li>
+                                <li>Главная</li>
+                                <li>Галлерея</li>
                             </ul>
                         </div><!-- end breadcrumbs -->
                     </div><!-- end column -->
@@ -26,30 +26,22 @@
                     <div id="primary" class="content-area fullwidth">
                         <div id="content" class="site-content">
 
-                            <div class="row service-wrapper row-flex">
-                                    
+                            <div class="row service-wrapper row-flex">                          
+                                
+                            <?php foreach($albums as $album): ?>  
                                <div class="service-col-sq">
-                                    <h2>Routine Maintenance</h2>
+                                    <h2><?php echo $album['name']; ?></h2>
                                     <figure>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-1" data-title="My caption1"><img src="images/content/service-01.jpg" alt=""></a>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-1" data-title="My caption2"></a>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-1" data-title="My caption3"></a>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-1" data-title="My caption4"></a>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-1" data-title="My caption5"></a>
+                                       <?php for($i=0; count($album['imgs']) > $i; $i++): ?>   
+                                        <a href="<?php echo $album['imgs'][$i]['link']; ?>" data-lightbox="album-<?php echo $album['id']; ?>" data-title="<?php echo $album['imgs'][$i]['description']; ?>"><?php echo ($i == 0) ? "<img src='". $album['imgs'][$i]['link']."' alt=''>" : ""?></a>
+                                       <?php endfor;?>
                                     </figure>
-                                    <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
+                                    <p><?php echo $album['description']; ?></p>
+                                    <p><b>Автор: </b><?php echo $album['autor']; ?></p>
+
                                 </div><!-- end column -->
-                               <div class="service-col-sq">
-                                    <h2>Routine Maintenance</h2>
-                                    <figure>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-2" data-title="My 123caption1"><img src="images/content/service-01.jpg" alt=""></a>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-2" data-title="My 123caption2"></a>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-2" data-title="My 123caption3"></a>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-2" data-title="My 23caption4"></a>
-                                       <a href="images/content/service-01.jpg" data-lightbox="image-2" data-title="My 123caption5"></a>
-                                    </figure>
-                                    <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
-                                </div><!-- end column -->
+                            <?php endforeach; ?>
+                               
 
                             </div><!-- end row -->
 

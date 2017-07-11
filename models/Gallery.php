@@ -152,4 +152,31 @@ class Gallery {
 
         return true;
     }
+    
+    public static function getAlbumInImages(){
+        
+        $db = Db::getConnection(); //инициализируем подключение к бд
+        
+        $idsAlbum = array(); //инициализируем переменную 
+        
+        $sql = "SELECT id FROM album_gallery WHERE is_publication = 1";
+        
+        $result = $db->query($sql); // получаем из базы список
+        
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $i = 0;
+        while($row = $result->fetch()){
+                $idsAlbum[$i] = $row['id'];
+            $i++;
+        }
+        
+        //return $idsAlbum;
+        $albums = Array();
+        
+        for($i = 0; count($idsAlbum) > $i; $i++){
+            $albums[$i] = self::getAlbumById($idsAlbum[$i]);
+        }
+        return $albums;
+    }
 }

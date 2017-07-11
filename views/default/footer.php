@@ -1,14 +1,15 @@
- <footer id="footer-section" class="site-footer">
+<?php $inf = info::getInfo()?> 
+<footer id="footer-section" class="site-footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
 						<div class="widget">
 							<div class="widget-inner">
                                 <div class="widget-title-outer">
-    								<h3 class="widget-title">About Us</h3>
+    								<h3 class="widget-title">Коротко о нас</h3>
                                 </div>
-								<p>Lusioto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
-								<p><a href="#" class="more">Learn More</a></p>
+								<p><?php echo $inf['info_text_mini']?> </p>
+								<p><a href="/about" class="more">Подробнее</a></p>
 							</div><!-- end inner -->
 						</div><!-- end widget -->
 					</div>
@@ -17,27 +18,26 @@
 						<div class="widget">
 							<div class="widget-inner">
                                 <div class="widget-title-outer">
-								    <h3 class="widget-title">Office Address</h3>
+								    <h3 class="widget-title">Адрес</h3>
                                 </div>
-								<p>Our Office Address :</p>
 								<table>
-									<tr>
-										<td><strong>Location</strong></td>
-										<td> : Kaliurang St. No 104, Sinduharjo, <br/>&nbsp;&nbsp;Ngaglik, Sleman.</td>
-									</tr>
-									<tr>
-										<td><strong>Telp</strong></td>
-										<td> : (0274) 9982732</td>
-									</tr>
-									<tr>
-										<td><strong>Email</strong></td>
-										<td> : <a href="mailto:staff@localhost.net">staff@localhost.net</a></td>
-									</tr>
-									<tr>
-										<td><strong>Open Hour</strong></td>
-										<td> : Monday &dash; Friday <br/> &nbsp;&nbsp;08:00 AM &dash; 16:00 PM</td>
-									</tr>
-								</table>
+                                                                    <tr>
+                                                                        <td><strong>Находимся:</strong></td>
+                                                                        <td> <?php echo $inf['adress']?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Телефон: </strong></td>
+                                                                        <td> <?php echo $inf['phones']?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Email:</strong></td>
+                                                                        <td> <a href="mailto:<?php echo $inf['email']?>"><?php echo $inf['email']?></a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Режим работы:</strong></td>
+                                                                        <td><?php echo $inf['work_time']?></td>
+                                                                    </tr>
+                                                                </table>
 							</div><!-- end inner -->
 						</div><!-- end widget -->
 					</div>
