@@ -118,6 +118,7 @@
     <script src="<?php echo TMPL; ?>js/bootstrap.min.js"></script>
     <script src="<?php echo TMPL; ?>js/plugin.js"></script>
     <script src="<?php echo TMPL; ?>js/main.js"></script>
+
   </body>
 </html>
 

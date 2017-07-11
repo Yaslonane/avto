@@ -9,10 +9,9 @@
     <!-- Bootstrap -->
     <link href="<?php echo TMPL; ?>css/styles.css" rel="stylesheet">
     
-    <!-- подключение CSS файла Fancybox -->
-    <link rel="stylesheet" href="<?php echo LIB; ?>fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-    <!-- Подключение JS файла Fancybox -->
-    <script type="text/javascript" src="<?php echo LIB; ?>fancybox/jquery.fancybox.pack.js"></script>
+    <!-- lightbox -->
+    <link href="<?php echo LIB; ?>lightbox/css/lightbox.css" rel="stylesheet">
+        <script src="<?php echo LIB; ?>lightbox/js/lightbox-plus-jquery.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
