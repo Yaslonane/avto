@@ -1,4 +1,22 @@
 <?php require_once 'header.php'; //подключаем header?> 
+<style> 
+    .thumb img { 
+      filter: none; /* IE6-9 */ 
+      -webkit-filter: grayscale(0); 
+      border-radius:5px; 
+      background-color: #fff; 
+      border: 1px solid #ddd; 
+      padding:5px; 
+    } 
+    .thumb img:hover { 
+      filter: gray; /* IE6-9 */ 
+      -webkit-filter: grayscale(1); 
+    } 
+    .thumb { 
+      padding:5px; 
+    } 
+  </style> 
+
 
 <div class="head-title">
             <div class="container">
@@ -24,41 +42,102 @@
                     <div id="primary" class="content-area fullwidth">
                         <div id="content" class="site-content">
 
-                            <div class="row gallery-wrapper">
+                            <div class="row">
+                                
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="images/content/gallery-thumb-01.jpg"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+                                    <a class="fancyimage" data-fancybox-group="group" href="полное_имя_файла"> 
+                                      <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
+                                    </a> 
+                                </div> 
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-1">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-1">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
-                                </a><!-- thumb 01 -->
+                                </a>thumb 01 -->
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-2">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-2">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
                                 </a><!-- thumb 02 -->
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-3">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-3">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
                                 </a><!-- thumb 03 -->
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-4">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-4">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
                                 </a><!-- thumb 04 -->
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-5">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-5">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
                                 </a><!-- thumb 05 -->
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-6">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-6">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
                                 </a><!-- thumb 06 -->
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-7">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-7">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
                                 </a><!-- thumb 07 -->
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-8">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-8">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
                                 </a><!-- thumb 08 -->
 
-                                <a class="col-md-4" href="#" data-toggle="modal" data-target=".pop-up-9">
+                                <!-- <a class="col-md-3" href="#" data-toggle="modal" data-target=".pop-up-9">
                                     <img src="images/content/gallery-thumb-01.jpg" class="img-responsive" alt="">
                                 </a><!-- thumb 09 -->
 
@@ -217,5 +296,13 @@
                 </div><!-- end row -->
             </div><!-- end container -->
         </div><!-- #main -->
+        
+        <script type="text/javascript" src="<?php echo LIB; ?>fancybox/jquery.fancybox.pack.js"></script> 
+        <script type="text/javascript"> 
+          $(document).ready(function() { 
+            $("a.fancyimage").fancybox(); 
+          }); 
+        </script> 
+  
         <!-- END CONTENT HERE -->
 <?php require_once 'footer.php'; //подключаем footer?>

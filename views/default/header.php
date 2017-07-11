@@ -8,6 +8,11 @@
 
     <!-- Bootstrap -->
     <link href="<?php echo TMPL; ?>css/styles.css" rel="stylesheet">
+    
+    <!-- подключение CSS файла Fancybox -->
+    <link rel="stylesheet" href="<?php echo LIB; ?>fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <!-- Подключение JS файла Fancybox -->
+    <script type="text/javascript" src="<?php echo LIB; ?>fancybox/jquery.fancybox.pack.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,42 +43,26 @@
 				        </div><!-- end logo -->
 
 				        <nav id="primary-navigation" class="site-navigation navbar-collapse collapse" role="navigation">
-				        	<div class="nav-menu">
-    							<ul class="menu">
-    								<li class="active"><a href="/">Домой</a></li>
-                                    <li><a href="about.html">О нас</a></li>
-    								<li class="has-child"><a href="<?php echo DOMAIN; ?>/services">Услуги</a>
-										<ul class="sub-menu">
-											<li><a href="service-single.html">Услуга 1</a></li>
-                                            <li><a href="service-single.html">Услуга 2</a></li>
-										</ul>
-    								</li>
-    								<li class="has-child"><a href="#">Страницы</a>
-										<ul class="sub-menu">
-                                            <li><a href="gallery.html">Галерея</a></li>
-                                            <li><a href="search-result.html">Результаты поиска</a></li>
-                                            <li><a href="elements.html">Веб элементы</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="#">Подменю уровня 2</a></li>
-                                                    <li><a href="#">Подменю уровня 2</a>
+                                            <div class="nav-menu">
+                                                <ul class="menu">
+                                                    <li class="active"><a href="/">Домой</a></li>
+                                                    <li><a href="/about">О нас</a></li>
+                                                    <li class="has-child"><a href="<?php echo DOMAIN; ?>/services">Услуги</a>
+                                                        <ul class="sub-menu">
+                                                                <li><a href="#">Услуга 1</a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li><a href="/gallery">Галерея</a></li>
+
+                                                    <li><a href="<?php echo DOMAIN; ?>/blogs">Блог</a></li>
+                                                    <li><a href="/faq">FAQ</a></li>
                                                 </ul>
-                                            </li>
-											<li><a href="404.html">404 Страница</a></li>
-										</ul>
-    								</li>
-    								<li><a href="<?php echo DOMAIN; ?>/blogs">Блог</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-single.html">Запись блога 1</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="testimonial.html">Рекомендации</a></li>
-    								<li><a href="faq.html">FAQ</a></li>
-    							</ul>
-    						</div><!-- end nav-menu -->
+                                            </div><!-- end nav-menu -->
 				        </nav><!-- end #primary-navigation -->
 
 				        <div class="appoinment-header">
-                                            <?php if(AdminBase::checkAdmin() === true): ?>
+                                            <?php if(!empty($_SESSION['user'])): ?>
 				        	<a href="<?php echo DOMAIN;?>/adminpanel/" class="btn btn-md btn-default">Админпанель</a>
                                             <?php else: ?>
 				        	<a href="<?php echo DOMAIN;?>/login" class="btn btn-md btn-default">Войти</a>
