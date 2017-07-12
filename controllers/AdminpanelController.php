@@ -13,6 +13,10 @@ class AdminpanelController extends AdminBase{
         
         self::checkAdmin();
         
+        if(isset($_POST['save'])){
+            //$message = Services::updateService();
+            $message = info::updateInfo();
+        }
         $gen_inf = info::getInfo();
         
         require_once (ROOT . ADM_TMPL . 'index.php');

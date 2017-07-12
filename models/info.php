@@ -51,4 +51,41 @@ class info {
         return $brandList; //возвращаем массив
         
     }
+    
+    public static function updateInfo(){
+        
+        $db = Db::getConnection();
+        
+        $email = $_POST['email'];
+        $phones = $_POST['phones'];
+        $adress = $_POST['adress'];
+        $work_time = $_POST['work_time'];
+        $site_name = $_POST['site_name'];
+        $text_mini = $_POST['info_text_mini'];
+        $text = $_POST['info_text'];
+        $meta_kw = $_POST['meta_kw'];
+        $meta_d = $_POST['meta_d'];
+        $logo = $_POST['logo'];
+
+        
+        $stmt = $db->prepare("UPDATE info set email = :email, phones = :phones,"
+                . "  adress = :adress, work_time = :work_time, site_name = :site_name, "
+                . "info_text_mini=:info_text_mini, info_text = :info_text, meta_kw = :meta_kw, meta_d = :meta_d, logo = :logo");
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':phones', $phones);
+        $stmt->bindParam(':adress', $adress);
+        $stmt->bindParam(':work_time', $work_time);
+        $stmt->bindParam(':site_name', $site_name);
+        $stmt->bindParam(':info_text_mini', $text_mini);
+        $stmt->bindParam(':info_text', $text);
+        $stmt->bindParam(':meta_kw', $meta_kw);
+        $stmt->bindParam(':meta_d', $meta_d);
+        $stmt->bindParam(':logo', $logo);
+        
+        $stmt->execute();
+        
+        if($stmt->rowCount() > 0) return "Запись обновлена";
+        else return "error!!!";
+
+    }
 }
