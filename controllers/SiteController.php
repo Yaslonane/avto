@@ -34,6 +34,8 @@ class SiteController{
         
         $blg = Blogs::getLatestPosts();
         
+        $brands = info::getBrands('user');
+        
         require_once(ROOT . TMPL .'index.php');
         
         return true;

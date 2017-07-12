@@ -23,4 +23,32 @@ class info {
         
         return $info; //возвращаем массив
     }
+    
+    public static function getBrands($role = 'user'){
+        
+        $db = Db::getConnection(); //инициализируем подключение к бд
+        
+        $brandList = array(); //инициализируем переменную 
+        
+        $sql = "SELECT * FROM brands";
+        
+        if($role == 'user'){
+            $sql .= " WHERE is_publication = 1";
+        }
+        
+        $result = $db->query($sql); // получаем из базы список
+        
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $i = 0;
+        while($row = $result->fetch()){
+            foreach($row as $key => $value) { //перебираем массив полученный из бд и формируем массив для вывода на страницу сайта
+                $brandList[$i][$key] = $value;
+            }
+            $i++;
+        }
+        
+        return $brandList; //возвращаем массив
+        
+    }
 }

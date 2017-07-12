@@ -213,36 +213,17 @@
                 <div class="row">
 
                     <div class="centered-title">
-                        <h3>Brand Partner</h3>
+                        <h3>Брэнды которыми мы пользуемся</h3>
                     </div><!-- blogs-title -->
-
+<?php //var_dump($brands); ?>
                     <div class="col-md-12">
-                        <div class="col-partner">
-                            <div>
-                                <img src="images/content/brand-01.png" alt="">
-                            </div>
-                        </div><!-- end column -->
-
-                        <div class="col-partner">
-                            <div>
-                                <img src="images/content/brand-02.png" alt="">
-                            </div>
-                        </div><!-- end column -->
-                        <div class="col-partner">
-                            <div>
-                                <img src="images/content/brand-03.png" alt="">
-                            </div>
-                        </div><!-- end column -->
-                        <div class="col-partner">
-                            <div>
-                                <img src="images/content/brand-04.png" alt="">
-                            </div>
-                        </div><!-- end column -->
-                        <div class="col-partner">
-                            <div>
-                                <img src="images/content/brand-05.png" alt="">
-                            </div>
-                        </div><!-- end column -->
+                        <?php foreach($brands as $br): ?>
+                            <div class="col-partner">
+                                <div>
+                                    <img src="<?php echo $br['link']?>" alt="<?php echo $br['name']?>">
+                                </div>
+                            </div><!-- end column -->
+                        <?php endforeach; ?>
                     </div><!-- end inner -->
                 </div><!-- end row -->
             </div><!-- end container -->
