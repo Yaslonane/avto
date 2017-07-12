@@ -35,7 +35,7 @@
                                         
                                     <?php else: ?>
                                 
-                                        <img src="<?php echo $service['img']; ?>" alt="Image Content Service" />
+                                        <img class='img-fluid center-block' src="<?php echo $service['img']; ?>" alt="Image Content Service" />
 
                                     <?php endif; ?>      
                                      

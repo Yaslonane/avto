@@ -32,7 +32,7 @@
                                             <?php if(!$sr['img']): ?>
                                             <img src="../images/content/service-01.jpg" alt="">
                                             <?php else: ?>
-                                                <img src="<?php echo $sr['img'] ?>" alt="">
+                                                <img class="img-fluid" src="<?php echo $sr['img'] ?>" alt="">
                                             <?php endif; ?> 
                                         </figure>
                                         <p><?php echo $sr['text_mini'] ?></p>

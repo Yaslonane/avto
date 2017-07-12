@@ -4,35 +4,36 @@
     		<div class="flexslider">
     			<ul class="slides">
 
-    				<li style="background-image: url('<?php echo TMPL; ?>images/content/slides-01.jpg')">
+    				<li style="background-image: url('<?php echo DOMAIN; ?>/images/content/files/slider/1.jpg')">
     					<div class="flex-caption">
     						<h2 class="animated fadeInRight">Experienced. Integrity. High Quality</h2>
     						<p class="animated fadeInLeft"><em>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</em></p>
-    						<div class="btn btn-md btn-line animated fadeInUp">LEARN MORE</div>
+    						
+                                                <a href="#" class="btn btn-primary btn-lg animated fadeInUp">LEARN MORE</a>
     					</div>
     				</li>
 
-    				<li style="background-image: url('<?php echo TMPL; ?>images/content/slides-02.jpg')">
+    				<li style="background-image: url('<?php echo DOMAIN; ?>/images/content/files/slider/2.jpg')">
     					<div class="flex-caption">
     						<h2 class="animated fadeInRight">High Performance of Engine</h2>
     						<p class="animated fadeInLeft"><em>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</em></p>
-    						<div class="btn btn-md btn-line animated fadeInUp">LEARN MORE</div>
+                                                <a href="#" class="btn btn-primary btn-lg animated fadeInUp">LEARN MORE</a>
     					</div>
     				</li>
 
-    				<li style="background-image: url('<?php echo TMPL; ?>images/content/slides-03.jpg')">
+    				<li style="background-image: url('<?php echo DOMAIN; ?>/images/content/files/slider/3.jpg')">
     					<div class="flex-caption">
     						<h2 class="animated fadeInRight">Serve with Heart</h2>
     						<p class="animated fadeInLeft"><em>Claritas est etiam processus dynamicus lectorum.</em></p>
-    						<div class="btn btn-md btn-line animated fadeInUp">LEARN MORE</div>
+    						<a href="#" class="btn btn-primary btn-lg animated fadeInUp">LEARN MORE</a>
     					</div>
     				</li>
 
-                    <li style="background-image: url('<?php echo TMPL; ?>images/content/slides-04.jpg')">
+                    <li style="background-image: url('<?php echo DOMAIN; ?>/images/content/files/slider/4.jpg')">
     					<div class="flex-caption">
     						<h2 class="animated fadeInRight">Serve with Heart 56656</h2>
     						<p class="animated fadeInLeft"><em>Claritas est etiam processus dynamicus lectorum 756756.</em></p>
-    						<div class="btn btn-md btn-line animated fadeInUp">LEARN MORE 567567</div>
+    						<a href="#" class="btn btn-primary btn-lg animated fadeInUp">LEARN MORE</a>
     					</div>
     				</li>
 
@@ -87,9 +88,9 @@
                             <p><?php echo $srv['text_mini'];?> <a href="services/<?php echo $srv['id'];?>" class="more">Подробнее</a></p>
                             <figure>
                                 <?php if(!$srv['img']):?>
-                                    <img src="images/content/sm-service-01.jpg" alt="">
+                                    <img  src="images/content/sm-service-01.jpg" alt="">
                                 <?php else:?>
-                                    <img src="<?php echo $srv['img'];?>" alt="">
+                                    <img class='img-responsive img-circle' src="<?php echo $srv['img'];?>" alt="">
                                 <?php endif;?>
                             </figure>
                         </div>
