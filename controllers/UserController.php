@@ -62,7 +62,6 @@ class UserController {
         $email = '';
         $password = '';
         
-        if(!$_SESSION['back_link'])$_SESSION['back_link'] =  $_SERVER['HTTP_REFERER'];
         var_dump($_SESSION);
         
         if(isset($_POST['submit'])){
@@ -88,8 +87,7 @@ class UserController {
             else {
                 User::auth($userId);
                 
-                header("Location: ". $_SESSION['back_link']);
-                unset($_SESSION['back_link']);
+                header("Location: /adminpanel");
             }
         }
         require_once (ROOT . ADM_TMPL . 'login.php');

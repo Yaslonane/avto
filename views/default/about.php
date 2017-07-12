@@ -28,7 +28,7 @@
                                 <div class="inner">
 
                                     <div class="entry-media">
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3952.6397770888398!2d110.4042447!3d-7.8278965!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57225c384a85%3A0x9ed0238d9f9046a1!2sJl.+Karanglo%2C+Daerah+Istimewa+Yogyakarta!5e0!3m2!1sid!2sid!4v1427272825372" width="620" height="300"></iframe>
+                                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3AaFQlYvbbwqJuWoGyv6sHzebqK_aZlkWd&amp;width=600&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
                                     </div><!-- end entry-media -->
 
                                     <h1 class="entry-title">
@@ -102,12 +102,7 @@
                                 </div><!-- end widget-content -->
                             </div><!-- end widget -->
 
-                            <div class="widget">
-                                <div class="widget-title-outer">
-                                    <h3 class="widget-title">Our Facebook Page</h3>
-                                </div>
-                                <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FFacebookDevelopers&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true"></iframe>
-                            </div><!-- end widget -->
+                            <?php require_once 'VK_widget.php';?>
 
                     </div><!-- end #secondary -->
 

@@ -6,34 +6,34 @@
 
     				<li style="background-image: url('<?php echo DOMAIN; ?>/images/content/files/slider/1.jpg')">
     					<div class="flex-caption">
-    						<h2 class="animated fadeInRight">Experienced. Integrity. High Quality</h2>
-    						<p class="animated fadeInLeft"><em>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</em></p>
+    						<h2 class="animated fadeInRight">Тонировка автомобилей</h2>
+    						<p class="animated fadeInLeft"><em>Тонировка без снятия обшивки двери и стекол</em></p>
     						
-                                                <a href="#" class="btn btn-primary btn-lg animated fadeInUp">LEARN MORE</a>
+                                                <a href="<?php echo DOMAIN; ?>/services/13" class="btn btn-primary btn-lg animated fadeInUp">Подробнее</a>
     					</div>
     				</li>
 
     				<li style="background-image: url('<?php echo DOMAIN; ?>/images/content/files/slider/2.jpg')">
     					<div class="flex-caption">
-    						<h2 class="animated fadeInRight">High Performance of Engine</h2>
-    						<p class="animated fadeInLeft"><em>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</em></p>
-                                                <a href="#" class="btn btn-primary btn-lg animated fadeInUp">LEARN MORE</a>
+    						<h2 class="animated fadeInRight">Шумоизоляция автомобиля</h2>
+    						<p class="animated fadeInLeft"><em>Шумоизоляция дверей, пола, потолка, багажника, и прочих элементов авто</em></p>
+                                                <a href="<?php echo DOMAIN; ?>/services/5" class="btn btn-primary btn-lg animated fadeInUp">Подробнее</a>
     					</div>
     				</li>
 
     				<li style="background-image: url('<?php echo DOMAIN; ?>/images/content/files/slider/3.jpg')">
     					<div class="flex-caption">
-    						<h2 class="animated fadeInRight">Serve with Heart</h2>
-    						<p class="animated fadeInLeft"><em>Claritas est etiam processus dynamicus lectorum.</em></p>
-    						<a href="#" class="btn btn-primary btn-lg animated fadeInUp">LEARN MORE</a>
+    						<h2 class="animated fadeInRight">Установка автосигнализации</h2>
+    						<p class="animated fadeInLeft"><em>Установка автосигнализация разных производителей и модификаций</em></p>
+    						<a href="<?php echo DOMAIN; ?>/services/2" class="btn btn-primary btn-lg animated fadeInUp">Подробнее</a>
     					</div>
     				</li>
 
                     <li style="background-image: url('<?php echo DOMAIN; ?>/images/content/files/slider/4.jpg')">
     					<div class="flex-caption">
-    						<h2 class="animated fadeInRight">Serve with Heart 56656</h2>
-    						<p class="animated fadeInLeft"><em>Claritas est etiam processus dynamicus lectorum 756756.</em></p>
-    						<a href="#" class="btn btn-primary btn-lg animated fadeInUp">LEARN MORE</a>
+    						<h2 class="animated fadeInRight">Ангравийная защита</h2>
+    						<p class="animated fadeInLeft"><em>Защитите кузов своего автомобиля от сколов</em></p>
+    						<a href="<?php echo DOMAIN; ?>/services/4" class="btn btn-primary btn-lg animated fadeInUp">Подробнее</a>
     					</div>
     				</li>
 
@@ -58,7 +58,7 @@
 
     				<div class="content-box">
     					<?php echo $inf['adress'];?>
-    					<a href="#" class="btn btn-sm btn-white">Посмотреть на карте</a>
+    					<a href="https://yandex.ru/maps/?um=constructor%3AaFQlYvbbwqJuWoGyv6sHzebqK_aZlkWd&source=constructorLink" class="btn btn-sm btn-white">Посмотреть на карте</a>
     				</div><!-- end content-box -->
     			</div><!-- end row-box -->
 
@@ -168,7 +168,7 @@
                                             </figure>
                                             <div class="inner">
                                                     <div class="entry-header">
-                                                                    <time class="published" datetime="2014-12-13" title="December 13, 2014 - 21:12 pm"><?php echo $bl['date']; ?></time>
+                                                                    <time class="published" datetime="<?php echo date("m-d-Y", $bl['date']); ?>" title="<?php echo Blogs::changeDate(date("j F Y - H:i",$bl['date'])); ?>"><?php echo date("m-d-Y", $bl['date']); ?></time>
                                                                     <h2 class="post-title entry-title">
                                                                             <a href="blog/<?php echo $bl['id']; ?>"><?php echo $bl['name']; ?></a>
                                                                     </h2>

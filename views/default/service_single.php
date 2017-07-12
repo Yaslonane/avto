@@ -64,7 +64,7 @@
                                     <?php endforeach;?>
                                 </ul>
                             </div><!-- end widget -->
-
+                            <?php require_once 'VK_widget.php';?>
                     </div><!-- end #secondary -->
 
                 </div><!-- end row -->

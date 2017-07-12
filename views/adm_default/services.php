@@ -27,7 +27,7 @@
             <td><?php echo $service['title']; ?></td>
             <td><?php echo $service['name']; ?></td>
             <td><?php echo $service['autor']; ?></td>
-            <td><?php echo $service['date']; ?></td>
+            <td><?php echo date("m-d-Y", $service['date']); ?></td>
             <td>
                 <a href="<?php DOMAIN; ?>/adminpanel/publicserv/<?php echo $service['id']; ?>" > <i <?php echo ($service['is_publication'] == 0) ? 'class="fa fa-times"  style="font-size:20px; color:#cc0000 "' : "class='fa fa-check'"; ?>></i></a>
             </td>

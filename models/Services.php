@@ -110,8 +110,7 @@ class Services {
         $text = $_POST['text'];
         $meta_kw = $_POST['meta_kw'];
         $meta_d = $_POST['meta_d'];
-        if($_FILES['img']) $img = Uploads::images();
-        else $img = $_POST['img_link'];
+        $img = $_POST['img'];
 
         
         $stmt = $db->prepare("UPDATE services set title = :title, name = :name,  date = :date, autor = :autor, is_publication = :is_publication, text_mini=:text_mini, text = :text, meta_kw = :meta_kw, meta_d = :meta_d, img = :img WHERE id=:id");

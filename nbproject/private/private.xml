@@ -3,7 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/avto.local/public_html/config/routes.php</file>
             <file>file:/var/www/avto.local/public_html/controllers/GalleryController.php</file>
+            <file>file:/var/www/avto.local/public_html/views/default/footer.php</file>
+            <file>file:/var/www/avto.local/public_html/views/default/service_single.php</file>
+            <file>file:/var/www/avto.local/public_html/views/default/about.php</file>
+            <file>file:/var/www/avto.local/public_html/controllers/AdminpanelController.php</file>
+            <file>file:/var/www/avto.local/public_html/views/default/blogs.php</file>
+            <file>file:/var/www/avto.local/public_html/views/default/index.php</file>
+            <file>file:/var/www/avto.local/public_html/views/default/services.php</file>
+            <file>file:/var/www/avto.local/public_html/models/Services.php</file>
+            <file>file:/var/www/avto.local/public_html/views/default/blog-single.php</file>
+            <file>file:/var/www/avto.local/public_html/models/Gallery.php</file>
+            <file>file:/var/www/avto.local/public_html/controllers/ServicesController.php</file>
+            <file>file:/var/www/avto.local/public_html/views/default/gallery.php</file>
+            <file>file:/var/www/avto.local/public_html/controllers/BlogsController.php</file>
         </group>
     </open-files>
 </project-private>

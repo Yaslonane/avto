@@ -27,7 +27,7 @@
             <td><?php echo $post['title']; ?></td>
             <td><?php echo $post['name']; ?></td>
             <td><?php echo $post['autor']; ?></td>
-            <td><?php echo $post['date']; ?></td>
+            <td><?php echo date("m-d-Y", $post['date']); ?></td>
             <td>
                 <a href="<?php DOMAIN; ?>/adminpanel/publicpost/<?php echo $post['id']; ?>" > <i <?php echo ($post['is_publication'] == 0) ? 'class="fa fa-times"  style="font-size:20px; color:#cc0000 "' : "class='fa fa-check'"; ?>></i></a>
             </td>

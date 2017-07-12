@@ -7,7 +7,7 @@
   <meta name="author" content="ThemeBucket">
   <link rel="shortcut icon" href="#" type="image/png">
 
-  <title>Horizontal menu Page</title>
+  <title><?php echo self::$title; ?></title>
   
    <!--ckeditor-->
   <script type="text/javascript" src="<?php echo LIB; ?>/ckeditor/ckeditor.js"></script>
@@ -83,37 +83,20 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li ><a href="<?php echo DOMAIN; ?>/adminpanel">Главная</a></li>
-                    <li class="active"><a href="<?php echo DOMAIN; ?>/adminpanel/services">Услуги</a></li>
+                    <li> <!--class="active"--><a href="<?php echo DOMAIN; ?>/adminpanel/services">Услуги</a></li>
                     <li><a href="<?php echo DOMAIN; ?>/adminpanel/posts">Блог</a></li>
                     <li><a href="<?php echo DOMAIN; ?>/adminpanel/category">Категории</a></li>
                     <li><a href="<?php echo DOMAIN; ?>/adminpanel/gallery">Галерея</a></li>
-                    <li><a href="<?php echo DOMAIN; ?>/adminpanel/users">Пользователи</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Form Components <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Form Elements</a></li>
-                            <li><a href="#">Advanced Components</a></li>
-                            <li><a href="#">Form Wizard</a></li>
-                            <li><a href="#">Form Validation</a></li>
-                            <li><a href="#">Dropzone</a></li>
-                        </ul>
-                    </li>
+     
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                        </form>
-                    </li>
+
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="<?php echo ADM_TMPL; ?>images/photos/user-avatar.png"> John Doe <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="<?php echo ADM_TMPL; ?>images/photos/user-avatar.png"> Админ <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Settings</a></li>
-                            <li><a href="<?php echo DOMAIN; ?>/logout">Log Out</a></li>
+                            <li><a href="<?php echo DOMAIN; ?>" target="_blank">На сайт</a></li>
+                            <li><a href="<?php echo DOMAIN; ?>/logout">Выйти</a></li>
                         </ul>
                     </li>
                 </ul>

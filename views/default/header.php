@@ -38,24 +38,19 @@
 				        </button>
 
 				        <div class="logo navbar-brand">
-                                            <a href="#"><img src="<?php echo DOMAIN; ?>/images/logo.png" height = "60" alt="" title="Bengkel"></a>
+                                            <a href="/"><img src="<?php echo DOMAIN; ?>/images/logo.png" height = "60" alt="" title="Bengkel"></a>
 				        </div><!-- end logo -->
 
 				        <nav id="primary-navigation" class="site-navigation navbar-collapse collapse" role="navigation">
                                             <div class="nav-menu">
                                                 <ul class="menu">
-                                                    <li class="active"><a href="/">Домой</a></li>
+                                                    <li><a href="/">Домой</a></li>
                                                     <li><a href="/about">О нас</a></li>
-                                                    <li class="has-child"><a href="<?php echo DOMAIN; ?>/services">Услуги</a>
-                                                        <ul class="sub-menu">
-                                                                <li><a href="#">Услуга 1</a></li>
-                                                        </ul>
-                                                    </li>
+                                                    <li><a href="<?php echo DOMAIN; ?>/services">Услуги</a></li>
 
                                                     <li><a href="/gallery">Галерея</a></li>
 
                                                     <li><a href="<?php echo DOMAIN; ?>/blogs">Блог</a></li>
-                                                    <li><a href="/faq">FAQ</a></li>
                                                 </ul>
                                             </div><!-- end nav-menu -->
 				        </nav><!-- end #primary-navigation -->

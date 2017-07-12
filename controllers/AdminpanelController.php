@@ -7,10 +7,13 @@
  */
 class AdminpanelController extends AdminBase{
     //put your code here
+    public static $title = "AVTOZONA | Админпанель";
     
     public function actionIndex(){
         
         self::checkAdmin();
+        
+        $gen_inf = info::getInfo();
         
         require_once (ROOT . ADM_TMPL . 'index.php');
         
