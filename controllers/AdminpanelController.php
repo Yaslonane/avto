@@ -12,7 +12,7 @@ class AdminpanelController extends AdminBase{
     public function actionIndex(){
         
         self::checkAdmin();
-        
+        $message = false;
         if(isset($_POST['save'])){
             //$message = Services::updateService();
             $message = info::updateInfo();
