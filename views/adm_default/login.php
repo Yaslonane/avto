@@ -22,8 +22,8 @@
 <body class="login-body">
 
 <div class="container">
-<?php var_dump($errors); ?>
-<?php var_dump($_POST); ?>
+<?php //var_dump($errors); ?>
+<?php //var_dump($_POST); ?>
     <form class="form-signin" action="" method="post">
         <div class="form-signin-heading text-center">
             <h1 class="sign-title">Войдите</h1>

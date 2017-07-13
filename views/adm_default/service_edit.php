@@ -48,7 +48,7 @@ function openKCFinder(field) {
             <div  class="col-sm-4">
                 <div class="form-group" >
                     <?php if(empty($service['img'])): ?>
-                        <img src="<?php echo DOMAIN; ?>/images/content/service-01.jpg" "/>
+                        <img src="<?php echo DOMAIN; ?>/images/content/service-01.jpg" />
                     <?php else: ?>
                         <img width="300 px" src="<?php echo $service['img']; ?>"/>
                     <?php endif; ?>
